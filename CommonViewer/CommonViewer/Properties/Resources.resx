@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Resources_en_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources.en-US.resx;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="str100" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="str1000" xml:space="preserve">
+    <value>画像情報</value>
+  </data>
+  <data name="str1001" xml:space="preserve">
+    <value>system_name</value>
+  </data>
+  <data name="str1002" xml:space="preserve">
+    <value>version</value>
+  </data>
+  <data name="str1003" xml:space="preserve">
+    <value>ct_gentype</value>
+  </data>
+  <data name="str1004" xml:space="preserve">
+    <value>sliceplan_der</value>
+  </data>
+  <data name="str1005" xml:space="preserve">
+    <value>slice_plan</value>
+  </data>
+  <data name="str1006" xml:space="preserve">
+    <value>d_sileno</value>
+  </data>
+  <data name="str1007" xml:space="preserve">
+    <value>d_date</value>
+  </data>
+  <data name="str1008" xml:space="preserve">
+    <value>start_time</value>
+  </data>
+  <data name="str1009" xml:space="preserve">
+    <value>workshop</value>
+  </data>
+  <data name="str1010" xml:space="preserve">
+    <value>comment</value>
+  </data>
+  <data name="str1011" xml:space="preserve">
+    <value>d_rawsts</value>
+  </data>
+  <data name="str1012" xml:space="preserve">
+    <value>d_recokind</value>
+  </data>
+  <data name="str1013" xml:space="preserve">
+    <value>full_mode</value>
+  </data>
+  <data name="str1014" xml:space="preserve">
+    <value>matsiz</value>
+  </data>
+  <data name="str1015" xml:space="preserve">
+    <value>scan_mode</value>
+  </data>
+  <data name="str1016" xml:space="preserve">
+    <value>speed_mode</value>
+  </data>
+  <data name="str1017" xml:space="preserve">
+    <value>scan_speed</value>
+  </data>
+  <data name="str1018" xml:space="preserve">
+    <value>scan_time</value>
+  </data>
+  <data name="str1019" xml:space="preserve">
+    <value>scan_area</value>
+  </data>
+  <data name="str1020" xml:space="preserve">
+    <value>area</value>
+  </data>
+  <data name="str1021" xml:space="preserve">
+    <value>slice_wid</value>
+  </data>
+  <data name="str1022" xml:space="preserve">
+    <value>width</value>
+  </data>
+  <data name="str1023" xml:space="preserve">
+    <value>det_ap_num</value>
+  </data>
+  <data name="str1024" xml:space="preserve">
+    <value>focus</value>
+  </data>
+  <data name="str1025" xml:space="preserve">
+    <value>tube</value>
+  </data>
+  <data name="str1026" xml:space="preserve">
+    <value>energy</value>
+  </data>
+  <data name="str1027" xml:space="preserve">
+    <value>volt</value>
+  </data>
+  <data name="str1028" xml:space="preserve">
+    <value>anpere</value>
+  </data>
+  <data name="str1029" xml:space="preserve">
+    <value>table_pos</value>
+  </data>
+  <data name="str1030" xml:space="preserve">
+    <value>d_tablepos</value>
+  </data>
+  <data name="str1031" xml:space="preserve">
+    <value>tilt_angle</value>
+  </data>
+  <data name="str1032" xml:space="preserve">
+    <value>fc</value>
+  </data>
+  <data name="str1033" xml:space="preserve">
+    <value>bhc</value>
+  </data>
+  <data name="str1034" xml:space="preserve">
+    <value>bhc_dir</value>
+  </data>
+  <data name="str1035" xml:space="preserve">
+    <value>bhc_name</value>
+  </data>
+  <data name="str1036" xml:space="preserve">
+    <value>zoom_dir</value>
+  </data>
+  <data name="str1037" xml:space="preserve">
+    <value>zoom_name</value>
+  </data>
+  <data name="str1038" xml:space="preserve">
+    <value>zooming</value>
+  </data>
+  <data name="str1039" xml:space="preserve">
+    <value>zoomx</value>
+  </data>
+  <data name="str1040" xml:space="preserve">
+    <value>zoomy</value>
+  </data>
+  <data name="str1041" xml:space="preserve">
+    <value>zoomsize</value>
+  </data>
+  <data name="str1042" xml:space="preserve">
+    <value>sift_pos</value>
+  </data>
+  <data name="str1043" xml:space="preserve">
+    <value>scale</value>
+  </data>
+  <data name="str1044" xml:space="preserve">
+    <value>roicaltable_dir</value>
+  </data>
+  <data name="str1045" xml:space="preserve">
+    <value>roical_table</value>
+  </data>
+  <data name="str1046" xml:space="preserve">
+    <value>pdtable_dir</value>
+  </data>
+  <data name="str1047" xml:space="preserve">
+    <value>pd_table</value>
+  </data>
+  <data name="str1048" xml:space="preserve">
+    <value>roical</value>
+  </data>
+  <data name="str1049" xml:space="preserve">
+    <value>pd</value>
+  </data>
+  <data name="str1050" xml:space="preserve">
+    <value>scano_dir</value>
+  </data>
+  <data name="str1051" xml:space="preserve">
+    <value>pro_dir</value>
+  </data>
+  <data name="str1052" xml:space="preserve">
+    <value>view_dir</value>
+  </data>
+  <data name="str1053" xml:space="preserve">
+    <value>pro_posdir</value>
+  </data>
+  <data name="str1054" xml:space="preserve">
+    <value>scano_dispdir</value>
+  </data>
+  <data name="str1055" xml:space="preserve">
+    <value>pix_minval</value>
+  </data>
+  <data name="str1056" xml:space="preserve">
+    <value>pix_maxval</value>
+  </data>
+  <data name="str1057" xml:space="preserve">
+    <value>ww</value>
+  </data>
+  <data name="str1058" xml:space="preserve">
+    <value>wl</value>
+  </data>
+  <data name="str1059" xml:space="preserve">
+    <value>graphic</value>
+  </data>
+  <data name="str1060" xml:space="preserve">
+    <value>rotation</value>
+  </data>
+  <data name="str1061" xml:space="preserve">
+    <value>trvsno</value>
+  </data>
+  <data name="str1062" xml:space="preserve">
+    <value>trvspt</value>
+  </data>
+  <data name="str1063" xml:space="preserve">
+    <value>realfdd</value>
+  </data>
+  <data name="str1064" xml:space="preserve">
+    <value>dtpitch</value>
+  </data>
+  <data name="str1065" xml:space="preserve">
+    <value>fanangle</value>
+  </data>
+  <data name="str1066" xml:space="preserve">
+    <value>fCD</value>
+  </data>
+  <data name="str1067" xml:space="preserve">
+    <value>trpitch</value>
+  </data>
+  <data name="str1068" xml:space="preserve">
+    <value>tbldia</value>
+  </data>
+  <data name="str1069" xml:space="preserve">
+    <value>aprtpt</value>
+  </data>
+  <data name="str1070" xml:space="preserve">
+    <value>bias</value>
+  </data>
+  <data name="str1071" xml:space="preserve">
+    <value>slope</value>
+  </data>
+  <data name="str1072" xml:space="preserve">
+    <value>mainch</value>
+  </data>
+  <data name="str1073" xml:space="preserve">
+    <value>refch</value>
+  </data>
+  <data name="str1074" xml:space="preserve">
+    <value>dumych</value>
+  </data>
+  <data name="str1075" xml:space="preserve">
+    <value>datach</value>
+  </data>
+  <data name="str1076" xml:space="preserve">
+    <value>allch</value>
+  </data>
+  <data name="str1077" xml:space="preserve">
+    <value>offsetapr</value>
+  </data>
+  <data name="str1078" xml:space="preserve">
+    <value>offsetpt</value>
+  </data>
+  <data name="str1079" xml:space="preserve">
+    <value>airdtpt</value>
+  </data>
+  <data name="str1080" xml:space="preserve">
+    <value>clct_inf</value>
+  </data>
+  <data name="str1081" xml:space="preserve">
+    <value>scanotvs</value>
+  </data>
+  <data name="str1082" xml:space="preserve">
+    <value>scanoapr</value>
+  </data>
+  <data name="str1083" xml:space="preserve">
+    <value>scanopt</value>
+  </data>
+  <data name="str1084" xml:space="preserve">
+    <value>scanoscl</value>
+  </data>
+  <data name="str1085" xml:space="preserve">
+    <value>scanoair</value>
+  </data>
+  <data name="str1086" xml:space="preserve">
+    <value>scanobias</value>
+  </data>
+  <data name="str1087" xml:space="preserve">
+    <value>scanoslop</value>
+  </data>
+  <data name="str1088" xml:space="preserve">
+    <value>scanotblbias</value>
+  </data>
+  <data name="str1089" xml:space="preserve">
+    <value>scanoudpitch</value>
+  </data>
+  <data name="str1090" xml:space="preserve">
+    <value>scanodpratio</value>
+  </data>
+  <data name="str1091" xml:space="preserve">
+    <value>scano_matsiz</value>
+  </data>
+  <data name="str1092" xml:space="preserve">
+    <value>scan_view</value>
+  </data>
+  <data name="str1093" xml:space="preserve">
+    <value>integ_number</value>
+  </data>
+  <data name="str1094" xml:space="preserve">
+    <value>recon_start_angle</value>
+  </data>
+  <data name="str1095" xml:space="preserve">
+    <value>image_bias</value>
+  </data>
+  <data name="str1096" xml:space="preserve">
+    <value>image_slope</value>
+  </data>
+  <data name="str1097" xml:space="preserve">
+    <value>image_direction</value>
+  </data>
+  <data name="str1098" xml:space="preserve">
+    <value>mcenter_channel</value>
+  </data>
+  <data name="str1099" xml:space="preserve">
+    <value>mchannel_pitch</value>
+  </data>
+  <data name="str1100" xml:space="preserve">
+    <value>mzoomx</value>
+  </data>
+  <data name="str1101" xml:space="preserve">
+    <value>mzoomy</value>
+  </data>
+  <data name="str1102" xml:space="preserve">
+    <value>mzoomsize</value>
+  </data>
+  <data name="str1103" xml:space="preserve">
+    <value>mscan_area</value>
+  </data>
+  <data name="str1104" xml:space="preserve">
+    <value>max_mscan_area</value>
+  </data>
+  <data name="str1105" xml:space="preserve">
+    <value>fimage_bit</value>
+  </data>
+  <data name="str1106" xml:space="preserve">
+    <value>Fid</value>
+  </data>
+  <data name="str1107" xml:space="preserve">
+    <value>recon_mask</value>
+  </data>
+  <data name="str1108" xml:space="preserve">
+    <value>n1</value>
+  </data>
+  <data name="str1109" xml:space="preserve">
+    <value>n2</value>
+  </data>
+  <data name="str1110" xml:space="preserve">
+    <value>mc</value>
+  </data>
+  <data name="str1111" xml:space="preserve">
+    <value>theta0</value>
+  </data>
+  <data name="str1112" xml:space="preserve">
+    <value>theta01</value>
+  </data>
+  <data name="str1113" xml:space="preserve">
+    <value>theta02</value>
+  </data>
+  <data name="str1114" xml:space="preserve">
+    <value>thetaoff</value>
+  </data>
+  <data name="str1115" xml:space="preserve">
+    <value>nc</value>
+  </data>
+  <data name="str1116" xml:space="preserve">
+    <value>delta_theta</value>
+  </data>
+  <data name="str1117" xml:space="preserve">
+    <value>dpm</value>
+  </data>
+  <data name="str1118" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <data name="str1119" xml:space="preserve">
+    <value>m0</value>
+  </data>
+  <data name="str1120" xml:space="preserve">
+    <value>Alpha</value>
+  </data>
+  <data name="str1121" xml:space="preserve">
+    <value>Zp</value>
+  </data>
+  <data name="str1122" xml:space="preserve">
+    <value>zs0</value>
+  </data>
+  <data name="str1123" xml:space="preserve">
+    <value>Iud</value>
+  </data>
+  <data name="str1124" xml:space="preserve">
+    <value>ioff</value>
+  </data>
+  <data name="str1125" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="str1126" xml:space="preserve">
+    <value>delta_z</value>
+  </data>
+  <data name="str1127" xml:space="preserve">
+    <value>ze0</value>
+  </data>
+  <data name="str1128" xml:space="preserve">
+    <value>inh</value>
+  </data>
+  <data name="str1129" xml:space="preserve">
+    <value>md</value>
+  </data>
+  <data name="str1130" xml:space="preserve">
+    <value>B1</value>
+  </data>
+  <data name="str1131" xml:space="preserve">
+    <value>scan_posi_a</value>
+  </data>
+  <data name="str1132" xml:space="preserve">
+    <value>multi_tube</value>
+  </data>
+  <data name="str1133" xml:space="preserve">
+    <value>Z0</value>
+  </data>
+  <data name="str1134" xml:space="preserve">
+    <value>acq_view</value>
+  </data>
+  <data name="str1135" xml:space="preserve">
+    <value>fid_offset</value>
+  </data>
+  <data name="str1136" xml:space="preserve">
+    <value>fcd_offset</value>
+  </data>
+  <data name="str1137" xml:space="preserve">
+    <value>A1</value>
+  </data>
+  <data name="str1138" xml:space="preserve">
+    <value>FS</value>
+  </data>
+  <data name="str1139" xml:space="preserve">
+    <value>x0</value>
+  </data>
+  <data name="str1140" xml:space="preserve">
+    <value>x1</value>
+  </data>
+  <data name="str1141" xml:space="preserve">
+    <value>x2</value>
+  </data>
+  <data name="str1142" xml:space="preserve">
+    <value>x3</value>
+  </data>
+  <data name="str1143" xml:space="preserve">
+    <value>x4</value>
+  </data>
+  <data name="str1144" xml:space="preserve">
+    <value>instance_num</value>
+  </data>
+  <data name="str1145" xml:space="preserve">
+    <value>iifield</value>
+  </data>
+  <data name="str1146" xml:space="preserve">
+    <value>filter</value>
+  </data>
+  <data name="str1147" xml:space="preserve">
+    <value>study_id</value>
+  </data>
+  <data name="str1148" xml:space="preserve">
+    <value>series_num</value>
+  </data>
+  <data name="str1149" xml:space="preserve">
+    <value>acq_num</value>
+  </data>
+  <data name="str1150" xml:space="preserve">
+    <value>instance_uid</value>
+  </data>
+  <data name="str1151" xml:space="preserve">
+    <value>frame_rate</value>
+  </data>
+  <data name="str1152" xml:space="preserve">
+    <value>scan_start_angle</value>
+  </data>
+  <data name="str1153" xml:space="preserve">
+    <value>detector</value>
+  </data>
+  <data name="str1154" xml:space="preserve">
+    <value>data_mode</value>
+  </data>
+  <data name="str1155" xml:space="preserve">
+    <value>cone_image_mode</value>
+  </data>
+  <data name="str1156" xml:space="preserve">
+    <value>fine_table_x</value>
+  </data>
+  <data name="str1157" xml:space="preserve">
+    <value>ftable_x_pos</value>
+  </data>
+  <data name="str1158" xml:space="preserve">
+    <value>fine_table_y</value>
+  </data>
+  <data name="str1159" xml:space="preserve">
+    <value>ftable_y_pos</value>
+  </data>
+  <data name="str1160" xml:space="preserve">
+    <value>rotate_select</value>
+  </data>
+  <data name="str1161" xml:space="preserve">
+    <value>c_cw_ccw</value>
+  </data>
+  <data name="str1162" xml:space="preserve">
+    <value>kv</value>
+  </data>
+  <data name="str1163" xml:space="preserve">
+    <value>airLogValue</value>
+  </data>
+  <data name="str1164" xml:space="preserve">
+    <value>fpd_gain_f</value>
+  </data>
+  <data name="str1165" xml:space="preserve">
+    <value>fpd_integ_f</value>
+  </data>
+  <data name="str1166" xml:space="preserve">
+    <value>xfilter</value>
+  </data>
+  <data name="str1167" xml:space="preserve">
+    <value>xfilter_c</value>
+  </data>
+  <data name="str1168" xml:space="preserve">
+    <value>xfocus</value>
+  </data>
+  <data name="str1169" xml:space="preserve">
+    <value>xfocus_c</value>
+  </data>
+  <data name="str1170" xml:space="preserve">
+    <value>largeRotTable</value>
+  </data>
+  <data name="str1171" xml:space="preserve">
+    <value>table_rotation</value>
+  </data>
+  <data name="str1172" xml:space="preserve">
+    <value>auto_centering</value>
+  </data>
+  <data name="str1173" xml:space="preserve">
+    <value>mscano_area</value>
+  </data>
+  <data name="str1174" xml:space="preserve">
+    <value>mscano_mdtpitch</value>
+  </data>
+  <data name="str1175" xml:space="preserve">
+    <value>mscano_width</value>
+  </data>
+  <data name="str1176" xml:space="preserve">
+    <value>mscanopt</value>
+  </data>
+  <data name="str1177" xml:space="preserve">
+    <value>mscanoscl</value>
+  </data>
+  <data name="str1178" xml:space="preserve">
+    <value>mscano_udpitch</value>
+  </data>
+  <data name="str1179" xml:space="preserve">
+    <value>mscano_bias</value>
+  </data>
+  <data name="str1180" xml:space="preserve">
+    <value>mscano_slope</value>
+  </data>
+  <data name="str1181" xml:space="preserve">
+    <value>mscano_dp_ratio</value>
+  </data>
+  <data name="str1182" xml:space="preserve">
+    <value>numOfAdjCenterCh</value>
+  </data>
+  <data name="str1183" xml:space="preserve">
+    <value>scan_fcdMecha</value>
+  </data>
+  <data name="str1184" xml:space="preserve">
+    <value>scan_fcdLinear</value>
+  </data>
+  <data name="str1185" xml:space="preserve">
+    <value>scan_fddMecha</value>
+  </data>
+  <data name="str1186" xml:space="preserve">
+    <value>scan_fddLinear</value>
+  </data>
+  <data name="str1187" xml:space="preserve">
+    <value>scan_table_x_posMecha</value>
+  </data>
+  <data name="str1188" xml:space="preserve">
+    <value>scan_table_x_posLinear</value>
+  </data>
+  <data name="str1189" xml:space="preserve">
+    <value>scan_udab_pos</value>
+  </data>
+  <data name="str1190" xml:space="preserve">
+    <value>scan_ud_linear_pos</value>
+  </data>
+  <data name="str1191" xml:space="preserve">
+    <value>w_scan</value>
+  </data>
+  <data name="str1192" xml:space="preserve">
+    <value>pl_mbhc</value>
+  </data>
+  <data name="str1193" xml:space="preserve">
+    <value>pl_collion</value>
+  </data>
+  <data name="str1194" xml:space="preserve">
+    <value>pl_mbhc_mat</value>
+  </data>
+  <data name="str1195" xml:space="preserve">
+    <value>pl_mbhc_para</value>
+  </data>
+  <data name="str1196" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1197" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1198" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1199" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1200" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1201" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1202" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1203" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1204" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1205" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1206" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1207" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1208" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1209" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1210" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1211" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1212" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1213" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1214" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1215" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1216" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1217" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1218" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1219" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="str1220" xml:space="preserve">
+    <value>-</value>
+  </data>
+</root>
