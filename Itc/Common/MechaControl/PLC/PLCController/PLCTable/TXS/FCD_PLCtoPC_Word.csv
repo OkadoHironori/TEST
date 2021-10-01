@@ -1,0 +1,5 @@
+番号,アドレス,変数名,利用可否,コメント,,
+0,D110200,FCDOrigin,2,Float,100,TRUE,FCD原点位置
+2,D110202,FCDHome,2,Float,100,TRUE,FCDホーム位置
+
+

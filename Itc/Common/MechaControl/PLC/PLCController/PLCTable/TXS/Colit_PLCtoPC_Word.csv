@@ -1,0 +1,5 @@
+番号,アドレス,変数名,エンディアン,スケール,利用可否,コメント,,
+0,D110500,FCD_Coli1,2,Float,10,TRUE,X線源筐体支台の干渉回避(FCD)1
+2,D110502,TblY_Coli1,2,Float,100,TRUE,X線源筐体支台の干渉回避(TblY)1
+4,D110504,FCD_Coli2,2,Float,10,TRUE,X線源筐体支台の干渉回避(FCD)2
+6,D110506,TblY_Coli2,2,Float,100,TRUE,X線源筐体支台の干渉回避(TblY)2

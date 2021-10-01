@@ -1,0 +1,4 @@
+番号,アドレス,変数名,利用可否,コメント
+0,L001920,DoorInterlock,TRUE,試料扉のインターロック
+1,L001921,XraySourceCollisionSensor,TRUE,X線干渉センサ取付チェック入力
+2,L001922,XraySourceCollisionPrevent,TRUE,浜ホト干渉防止設定

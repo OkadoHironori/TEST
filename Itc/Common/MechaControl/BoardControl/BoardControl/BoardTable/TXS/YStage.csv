@@ -1,0 +1,41 @@
+YStgStep,0.002,deg(mm)/pls
+YStgMag,1,
+YStgDir,1,1:CWで増加 -1:CCWで増加
+YStgPlsMode,4,4:2パルス、6:位相差
+YStgPlsMult,2,"1,2,4"
+YStgRateTime,0.5,sec
+YStgSpdFL,0.05,deg(mm)/sec
+YStgManualSpd,5,deg(mm)/sec
+YStgManualLimitSpd,20,deg(mm)/sec
+YStgManualTimeOut,600000,msec
+YStgIndexRateTime,0.5,sec
+YStgIndexSpdFL,0.05,deg(mm)/sec
+YStgIndexSpdFH,20,deg(mm)/sec
+YStgIndexTimeOut,120000,msec
+YStgOriginSpdFL,0.05,deg(mm)/sec
+YStgOriginSpdFH,7,deg(mm)/sec
+YStgOriginTimeOut,120000,msec
+YStgOriginShift,0,deg(mm)
+YStgOriginPos,51,deg(mm)
+YStgOriginOffset,-51,deg(mm)
+YStgOriginMode,6,0:OLSon、1:OLS+RFA、2:OLS+Z相、4:OLS+RFA+Z相、6:ELS+RFA、7:ELS+RFA+Z相
+YStgOriginDir,0,0:CCW方向 1:CW方向
+YStgOriginNoChk,1,原点復帰確認0:有効、1:無効
+YStgStopTimeOut,1000,msec
+YStgLmtNoChk,1,0:有効、1:無効
+YStgCwLmtPos,50,deg(mm)
+YStgCcwLmtPos,-50,deg(mm)
+YStgMotorType,0,0:パルス 1:サーボ 2:その他
+YStgOrgPolarity,0,0:a接、1:b接
+YStgLmtPolarity,1,0:a接、1:b接
+YStgDlsPolarity,1,0:a接、1:b接
+YStgAlmPolarity,0,0:a接、1:b接
+YStgElsMode,0,0:即停止、1:減速停止
+YStgNoSlowMode,1,0:有効、1:無効
+YStgCrLowPos,0,deg(mm)
+YStgCrHiPos,0,deg(mm)
+YStgSlowSpd,1,deg(mm)/sec
+YStgCtrIncrement,0.01,Index制御可能な最小単位(string)
+YStgMaxValue,50,mm　Indexで入力可能な最大値
+YStgMinValue,-50,mm　Indexで入力可能な最小値
+YStgInpos,1.00,Inpos範囲(mm)

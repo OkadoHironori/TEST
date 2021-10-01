@@ -1,0 +1,1 @@
+﻿xcopy $(ProjectDir)\iDetector $(TargetDir) /D/E/C/I/H/Y

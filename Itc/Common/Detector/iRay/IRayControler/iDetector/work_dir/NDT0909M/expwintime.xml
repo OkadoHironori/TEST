@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<params>
+	<condition0>
+		<binning0>
+			<zoom0 value="0">
+				<param1 type="int" value="15"/>
+			</zoom0>
+		</binning0>
+		<binning1>
+			<zoom0 value="0">
+				<param1 type="int" value="15"/>
+			</zoom0>
+		</binning1>
+	</condition0>
+
+	<condition1>
+		<binning0>
+			<zoom0 value="0">
+				<param1 type="int" value="28"/>
+			</zoom0>
+		</binning0>
+		<binning1>
+			<zoom0 value="0">
+				<param1 type="int" value="28"/>
+			</zoom0>
+		</binning1>
+	</condition1>
+
+	<condition2>
+		<binning0>
+			<zoom0 value="0">
+				<param1 type="int" value="54"/>
+			</zoom0>
+		</binning0>
+		<binning1>
+			<zoom0 value="0">
+				<param1 type="int" value="54"/>
+			</zoom0>
+		</binning1>
+	</condition2>
+
+	<condition3>
+		<binning0>
+			<zoom0 value="0">
+				<param1 type="int" value="106"/>
+			</zoom0>
+		</binning0>
+	</condition3>
+</params>

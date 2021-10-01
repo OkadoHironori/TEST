@@ -1,0 +1,8 @@
+状態確認,番号,
+XrayNotReady,5,Ｘ線が照射出来ない状態 （プリヒート中、基板故障時、インターロック開放時）
+OverloadProtection,4,過負荷保護機能動作中
+Wormup,1,ウォーミングアップ動作中
+TestMode,6,セルフテスト動作中
+XrayOn,3,Ｘ線照射中
+NeedWup,0,ウォーミングアップ待機中
+XrayOnReady,2,Ｘ線照射待機中

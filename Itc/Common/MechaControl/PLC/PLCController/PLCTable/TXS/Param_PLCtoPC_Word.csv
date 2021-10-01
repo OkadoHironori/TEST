@@ -1,0 +1,48 @@
+番号,アドレス,変数名,エンディアン,型,スケール,利用可否,コメント
+0,D019000,stsFDD,2,Float,10,TRUE,FDD
+2,D019002,stsFCD,2,Float,10,TRUE,FCD
+5,D019005,stsTblYMinSpeed,1,Float,10,TRUE,テーブルY軸 最低速度
+6,D019006,stsTblYMaxSpeed,1,Float,10,TRUE,テーブルY軸 最高速度
+7,D019007,stsTblYSpeed,1,Float,10,TRUE,テーブルY軸 運転速度
+9,D019009,stsFcdMinSpeed,1,Float,10,TRUE,FCD最低速度
+10,D01900A,stsFcdMaxSpeed,1,Float,10,TRUE,FCD最高速度
+11,D01900B,stsFcdSpeed,1,Float,10,TRUE,FCD運転速度
+12,D01900C,stsFcdDecelerationSpeed,1,Float,10,FALSE,FCD減速速度_使っていないような
+13,D01900D,stsTblYPosition,2,Float,100,TRUE,試料テーブルY軸　現在値
+16,D019010,stsFddMinSpeed,1,Float,10,TRUE,検出器最低速度
+17,D019011,stsFddMaxSpeed,1,Float,10,TRUE,検出器最高速度
+18,D019012,stsFddSpeed,1,Float,10,TRUE,検出器運転速度
+19,D019013,stsUDSpeed,1,Float,100,TRUE,昇降手動運転速度
+20,D019014,stsUDIndexPos,2,Float,100,TRUE,昇降位置決め位置
+22,D019016,stsRotSpeed,1,Float,100,TRUE,回転手動運転速度
+23,D019017,stsRotIndexPos,2,Float,100,TRUE,回転位置決め位置
+25,D019019,stsXStgSpeed,1,Float,100,TRUE,微調X手動運転速度
+27,D01901B,stsYStgSpeed,1,Float,100,TRUE,微調Y手動運転速度
+29,D01901D,stsYPosition,2,Float,100,TRUE,未利用
+32,D019020,stsXrayFCD,2,Float,1,FALSE,X線管FCD
+34,D019022,stsXrayXMinSp,1,Float,1,FALSE,X線管X軸最低速度
+35,D019023,stsXrayXMaxSp,1,Float,1,FALSE,X線管X軸最高速度
+36,D019024,stsXrayXSpeed,1,Float,1,FALSE,X線管X軸運転速度
+37,D019025,stsXrayXPos,2,Float,1,FALSE,X線管X軸現在位置
+40,D019028,stsPlcErrorCode,1,Int,1,TRUE,ｼｰｹﾝｻｴﾗｰｺｰﾄﾞ
+41,D019029,stsEXMLimitTV,1,Int,1,FALSE,X線EXM制限管電圧値
+42,D01902A,stsEXMLimitTC,1,Int,1,FALSE,X線EXM制限管電流値
+43,D01902B,stsXrayYMinSp,1,Float,1,FALSE,X線管Y軸最低速度
+44,D01902C,stsXrayYMaxSp,1,Float,1,FALSE,X線管Y軸最高速度
+45,D01902D,stsXrayYSpeed,1,Float,1,FALSE,X線管Y軸運転速度
+46,D01902E,stsXrayYPos,2,Float,1,FALSE,X線管Y軸現在位置
+48,D019030,stsEXMTVSet,1,Int,1,FALSE,X線EXM管電圧設定値
+49,D019031,stsEXMTCSet,1,Int,1,FALSE,X線EXM管電流設定値
+50,D019032,stsEXMTV,1,int,1,FALSE,X線EXM管電圧実測値
+51,D019033,stsEXMTC,1,int,1,FALSE,X線EXM管電流実測値
+52,D019034,stsXrayRotMinSp,1,Float,1,FALSE,X線管回転最低速度
+53,D019035,stsXrayRotMaxSp,1,Float,1,FALSE,X線管回転最高速度
+54,D019036,stsXrayRotSpeed,1,Float,1,FALSE,X線管回転運転速度
+55,D019037,stsXrayRotPos,2,Float,1,FALSE,X線管回転現在位置
+57,D019039,stsXrayRotAccel,1,Float,1,FALSE,X線管回転加速度
+58,D01903A,stsEXMMaxW,1,int,1,FALSE,X線EXM最大出力値
+59,D01903B,stsEXMMaxTV,1,int,1,FALSE,X線EXM最大管電圧値
+60,D01903C,stsEXMMinTV,1,int,1,FALSE,X線EXM最小管電圧値
+61,D01903D,stsEXMMaxTC,1,int,1,FALSE,X線EXM最大管電流値
+62,D01903E,stsEXMMinTC,1,int,1,FALSE,X線EXM最小管電流値
+63,D01903F,stsEXMErrCode,1,int,1,FALSE,X線EXMｴﾗｰｺｰﾄﾞ

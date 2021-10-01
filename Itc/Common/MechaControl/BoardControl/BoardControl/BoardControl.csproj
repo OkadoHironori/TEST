@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9DC19B1-AA8B-46F3-BAA4-59E617AF300B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Board.BoardControl</RootNamespace>
+    <AssemblyName>BoardControl</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.3.0.2\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.0.2\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoardInit.cs" />
+    <Compile Include="BoardProvider.cs" />
+    <Compile Include="BordConfig.cs" />
+    <Compile Include="BoardControl.cs" />
+    <Compile Include="BoardMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoardMes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BoardParam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>BoardParam.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RotationCtrl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RotParamFix.cs" />
+    <Compile Include="BoardSender.cs" />
+    <Compile Include="UpDownCtrl.cs" />
+    <Compile Include="UdParamFix.cs" />
+    <Compile Include="XStageCtrl.cs" />
+    <Compile Include="XStgParamFix.cs" />
+    <Compile Include="YStageCtrl.cs" />
+    <Compile Include="YStgParamFix.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Itc.Common.csproj">
+      <Project>{0eaa0a72-0e0a-444b-be95-0d14d29b2aa8}</Project>
+      <Name>Itc.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPD530_W_6_01J\spc53004.csproj">
+      <Project>{92de2906-1633-46cd-849d-8a5e6c567c1a}</Project>
+      <Name>spc53004</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BoardMes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BoardMes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BoardParam.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>BoardParam.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BoardTable\TXS\BoardConf.csv" />
+    <None Include="BoardTable\TXS\Boardpara.csv" />
+    <None Include="BoardTable\TXS\Rotation.csv" />
+    <None Include="BoardTable\TXS\UpDown.csv" />
+    <None Include="BoardTable\TXS\XStage.csv" />
+    <None Include="BoardTable\TXS\YStage.csv" />
+    <None Include="SPC53004_Manual\CPD530_W_5_42J.pdf" />
+    <None Include="SPC53004_Manual\CPD534_I_5_13J.pdf" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)BoardTable $(TargetDir)TXS\Mecha\BoardTable /D/E/C/I/H/Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,16 @@
+COLITION,接触あり
+CONFIRM_OPERATION,装置内部を確認してください
+EXCEPTION_ERROR,例外が発生しました
+INDEX_Process,インデックス動作中
+LARGE_TABLE_MODE,大型テーブルモード
+ON_MOVE,移動中
+ON_STOP,停止中
+PROCESS_COMPLEAT,正常終了
+PROCESS_STOP,停止しました
+RESET_Process,リセット中
+SPD_H,[H]:高速
+SPD_L,[L]:低速
+SPD_M,[M]:中速
+SPD_SL,[SL]:超低速
+SPEED_SET_ERROR,スピードを設定できませんでした
+TIMEOUT_ERROR,タイムアウトエラーが発生しました

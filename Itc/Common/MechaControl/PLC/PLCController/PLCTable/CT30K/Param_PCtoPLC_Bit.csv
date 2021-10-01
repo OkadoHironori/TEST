@@ -1,0 +1,168 @@
+アドレス,変数名,利用可否,コメント
+X002080,CommCheck,TRUE,通信チェック 2秒毎にPLCに送信
+X002081,WordWrite,FALSE,利用していない？
+X002082,PanelInhibit,TRUE,true:タッチパネル操作禁止、false:タッチパネル操作可能
+X002083,stsScanBusy,FALSE,利用していない？
+X002084,ScanPCErr,FALSE,スキャン中にエラーしたか？
+X002085,ErrOff,FALSE,利用していない？
+X002086,RotXChangeReset,TRUE,回転中心校正　メカの移動有無プロパティをリセットする
+X002087,DisXChangeReset,TRUE,寸法校正　メカの移動有無プロパティをリセットする
+X002088,RotYChangeReset,TRUE,回転中心校正　メカの移動有無プロパティをリセットする
+X002089,DisYChangeReset,TRUE,寸法校正　メカの移動有無プロパティをリセットする
+X00208A,VerIIChangeReset,TRUE,幾何歪校正　I.I.の移動有無を元の状態に戻す
+X00208B,RotIIChangeReset,TRUE,回転中心校正　I.I.の移動有無を元の状態に戻す
+X00208C,GainIIChangeReset,TRUE,ゲイン校正　I.I.の移動有無を元の状態に戻す
+X00208D,DisIIChangeReset,TRUE,寸法校正　I.I.の移動有無を元の状態に戻す
+X00208E,SPIIChangeReset,TRUE,スキャン位置校正　I.I.の移動有無を元の状態に戻す
+X002090,TblYLeft,TRUE,テーブルＹ軸CW　
+X002091,TblYRight,TRUE,テーブルＹ軸CCW　
+X002092,TblYIndex,TRUE,テーブルＹ軸インデックス　
+X002093,TblYIndexStop,TRUE,テーブルＹ軸インデックスストップ
+X002094,TblYOrigin,TRUE,テーブルＹ軸原点復帰
+X002095,FcdForward,TRUE,FCD軸　CW　
+X002096,FcdBackward,TRUE,FCD軸　CCW　
+X002097,FcdIndex,TRUE,FCD軸　インデックス
+X002098,FcdIndexStop,TRUE,FCD軸　ストップ　
+X002099,FcdOrigin,TRUE,FCD軸　原点復帰
+X00209A,FddForward,TRUE,FDD 前進
+X00209B,FddBackward,TRUE,FDD 後退
+X00209C,FddIndex,TRUE,FDD インデックス
+X00209D,FddIndexStop,TRUE,FDD ストップ
+X00209E,XYIndex,TRUE,FCD、Y軸の同時移動　指定位置へ移動時に利用する
+X00209F,FddOrigin,TRUE,FDD軸の原点復帰
+X0020A0,TiltCw,FALSE,未使用   チルトはボード制御のため、チルト機構CW 
+X0020A1,TiltCcw,FALSE,未使用　チルトはボード制御のため、チルト機構CCW
+X0020A2,TiltOrigin,FALSE,未使用　チルトはボード制御のため、チルト機構原点
+X0020A5,ColliLOpen,FALSE,未使用
+X0020A6,ColliLClose,FALSE,未使用
+X0020A7,ColliROpen,FALSE,未使用
+X0020A8,ColliRClose,FALSE,未使用
+X0020A9,ColliUOpen,TRUE,コリメータ　上側　オープン
+X0020AA,ColliUClose,TRUE,コリメータ　上側　クローズ
+X0020AB,ColliDOpen,TRUE,コリメータ　下側　オープン
+X0020AC,ColliDClose,TRUE,コリメータ　下側　クローズ
+X0020AD,ColliUDOpen,TRUE,コリメータ　両方　オープン
+X0020AE,ColliUDClose,TRUE,コリメータ　両方　クローズ
+X0020AF,Shutter,FALSE,シャッター
+X0020B0,Filter0,FALSE,未使用
+X0020B1,Filter1,FALSE,未使用
+X0020B2,Filter2,FALSE,未使用
+X0020B3,Filter3,FALSE,未使用
+X0020B4,Filter4,FALSE,未使用
+X0020B5,Filter5,FALSE,未使用
+X0020B7,stsWarmUpOn,TRUE,X線ウォームアップON
+X0020B8,stsXrayOn,TRUE,X線ON
+X0020B9,XrayInhibit,TRUE,X線外部制御　有無を送信　通常はtrueを送信
+X0020BA,Xray225,FALSE,未使用
+X0020BB,Xray160,FALSE,未使用
+X0020BC,II,TRUE,検出器種類　II  必要か？
+X0020BD,FPD,TRUE,検出器種類 FPD 必要か？
+X0020BE,XTableMove,TRUE,テーブルとＸ線管のどちらがＸ軸として移動するかをシーケンサに送信　必要か？
+X0020BF,TubeMove,TRUE,テーブルとＸ線管のどちらがＸ軸として移動するかをシーケンサに送信　必要か？
+X0020C0,II9,FALSE,未使用 II
+X0020C1,II6,FALSE,未使用 II
+X0020C2,II4,FALSE,未使用 II
+X0020C3,IIPowerOn,FALSE,フィラメント調整中にII電源をONする VISCOM用
+X0020C4,IIPowerOff,FALSE,II電源をOFFする　VISCOM用
+X0020C5,SLightOn,TRUE,スライスライトON
+X0020C6,SLightOff,TRUE,スライスライトOFF
+X0020C7,TableMovePermit,TRUE,シーケンサに「制限」を設定 true
+X0020C8,TableMoveRestrict,FALSE,未使用
+X0020CA,stsUDErr,FALSE,テーブル昇降エラーを通知
+X0020CB,stsUDLimit,FALSE,未使用　テーブル昇降リミットを通知
+X0020CC,stsUDBusy,FALSE,未使用　テーブル昇降中を通知
+X0020CE,sts1stPcErr,FALSE,未使用　1stPCのエラーを通知か?
+X0020CF,stsXrayErr,FALSE,X線エラーを通知
+X0020D0,stsRotErr,FALSE,回転テーブルのエラーを通知　未使用で良いと思う
+X0020D1,stsRotBusy,FALSE,未使用　回転中かどうかを通知
+X0020D2,stsXStgErr,TRUE,微調Xステージエラー
+X0020D3,stsTiltErr,FALSE,チルトエラー
+X0020D4,stsYStgErr,TRUE,微調Yステージエラー
+X0020D5,stsTiltRotErr,FALSE,チルト回転エラー
+X0020D6,stsPhmErr,FALSE,ファントムエラー
+X0020D7,stsPhmLimit,FALSE,ファントムリミットエラー
+X0020D8,stsPhmBusy,FALSE,ファントム昇降中
+X0020D9,stsPhmOnOff,FALSE,ファントムON、OFF
+X0020DA,RotOriginOK,TRUE,回転リセット完了済か？
+X0020DB,TrgReq,FALSE,外部トリガON
+X0020DC,FXTableOn,TRUE,X軸の微調テーブル 在り無し
+X0020DD,FXTableOff,TRUE,X軸の微調テーブル 在り無し
+X0020DE,FYTableOn,TRUE,Y軸の微調テーブル 在り無し
+X0020DF,FYTableOff,TRUE,Y軸の微調テーブル 在り無し
+X0020E0,XrayXLeft,FALSE,未使用　X線源　X軸左
+X0020E1,XrayXRight,FALSE,未使用　X線源　X軸右
+X0020E2,XrayXOrg,FALSE,未使用　X線源　X軸原点
+X0020E3,XrayXIndex,FALSE,未使用　X線源　Ｘ軸インデックス
+X0020E4,XrayXStop,FALSE,未使用　X線源　Ｘ軸停止
+X0020E5,RotXrayXChReset,FALSE,未使用
+X0020E6,DisXrayXChReset,FALSE,未使用
+X0020EB,XrayYForward,FALSE,未使用　X線源　Y軸左
+X0020EC,XrayYBackward,FALSE,未使用　X線源　Y軸右
+X0020ED,XrayYOrg,FALSE,未使用　X線源　Y軸原点
+X0020EE,XrayYIndex,FALSE,未使用　X線源　Ｙ軸インデックス
+X0020EF,XrayYStop,FALSE,未使用　X線源　Ｙ軸停止
+X0020F0,RotXrayYChReset,FALSE,未使用
+X0020F1,DisXrayYChReset,FALSE,未使用
+X0020F3,DoorLockOn,TRUE,ドアロック　ON
+X0020F4,DoorLockOff,TRUE,ドアロック　OFF
+X0020F5,EXMRemote,FALSE,未使用　EXMリモート
+X0020F6,EXMLocal,FALSE,未使用　EXMローカル
+X0020F7,EXMOn,FALSE,未使用　EXMON
+X0020F8,EXMOff,FALSE,未使用　EXMOFF
+X0020F9,EXMReset,FALSE,未使用　EXMリセット
+X0020FA,EXMWUShort,FALSE,未使用　EXM 短期
+X0020FB,EXMWULong,FALSE,未使用　EXM 長期
+X0020FC,EXMWUNone,FALSE,未使用　EXM 未選択
+X0020FE,MechaReset,TRUE,未使用
+X0020FF,MechaResetStop,TRUE,未使用
+X002100,RotXChangeSet,TRUE,回転X　校正ステータスの ***移動をすべて移動ありにするための処理
+X002101,DisXChangeSet,TRUE,幾何歪　
+X002102,RotYChangeSet,TRUE,回転Y
+X002103,DisYChangeSet,TRUE,
+X002104,VerIIChangeSet,TRUE,
+X002105,RotIIChangeSet,TRUE,
+X002106,GainIIChangeSet,TRUE,
+X002107,DisIIChangeSet,TRUE,
+X002108,SPIIChangeSet,TRUE,高速II
+X00210A,CTIISet,FALSE,CT用IIをセット
+X00210B,TVIISet,FALSE,TV用IIをセット
+X00210C,IIChangeReset,FALSE,II変更リセット
+X00210D,IIChangeStop,FALSE,II変更ストップ
+X00210E,TVII9,FALSE,"TV用II 9"""
+X00210F,TVII6,FALSE,"TV用II 6"""
+X002110,TVII4,FALSE,"TV用II 4"""
+X002111,TVIIPowerOn,FALSE,TV用II電源ON
+X002112,TVIIPowerOff,FALSE,TV用II電源OFF
+X002113,CameraPowerOn,FALSE,短残光I.I.用カメラ電源ON
+X002114,CameraPowerOff,FALSE,短残光I.I.用カメラ電源OFF
+X002115,IrisLOpen,FALSE,絞りを開　Left
+X002116,IrisLClose,FALSE,絞りを閉　Left
+X002117,IrisROpen,FALSE,絞りを開　Right
+X002118,IrisRClose,FALSE,絞りを閉　Left
+X002119,IrisUOpen,TRUE,絞りを開　Up
+X00211A,IrisUClose,TRUE,絞りを閉　Up
+X00211B,IrisDOpen,TRUE,絞りを開　Down
+X00211C,IrisDClose,TRUE,絞りを閉　Down
+X00211D,CTChangeNO,FALSE,CTの変更
+X00211E,TVChangeNO,FALSE,TVの変更
+X00211F,FPDLShiftSet,FALSE,FPDシフト
+X002120,AutoRestrictOn,FALSE,未使用
+X002121,AutoRestrictOff,FALSE,未使用
+X002122,YIndexSlowOn,FALSE,未使用
+X002123,YIndexSlowOff,FALSE,未使用
+X002124,MicroFPDSet,FALSE,FPDの位置変更　都産技用
+X002125,NanoFPDSet,FALSE,FPDの位置変更　都産技用
+X002126,MicroTableYSet,FALSE,未使用
+X002127,NanoTableYSet,FALSE,未使用
+X002128,MicroFPDShiftSet,FALSE,FPDの位置変更　シフトスキャン　都産技用
+X002129,NanoFPDShiftSet,FALSE,FPDの位置変更　シフトスキャン　都産技用
+X00212A,FPDMoveStop,FALSE,FPD切替　ストップ
+X00212B,FPDMoveProhibit,FALSE,FPD＿移動禁止
+X00212D,SystemMoveProhibit,FALSE,未使用
+X00212E,FDSystemSet,FALSE,FDシステムのセット
+X00212F,FDSystemStop,FALSE,FDシステム変更停止
+X002130,stsXrayHOff,FALSE,未使用
+X002131,stsXrayMOff,FALSE,未使用
+L001920,DoorInterlock,TRUE,扉インターロック
+L001921,XraySourceCollisionSensor,TRUE,X線干渉センサ取付チェック入力
+L001922,XraySourceCollisionPrevent,TRUE,浜ホト干渉防止設定

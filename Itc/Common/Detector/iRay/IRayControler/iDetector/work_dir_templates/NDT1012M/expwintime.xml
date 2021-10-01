@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<params>
+    <binning0>
+        <param1 type="float" value="4"/>
+        <param2 type="float" unit="us" value="19.2"/>
+        <param3 type="float" unit="us" value="1700"/>
+    </binning0>
+    
+    <binning1>
+        <param1 type="float" value="4"/>
+        <param2 type="float" unit="us" value="19.2"/>
+        <param3 type="float" unit="us" value="1700"/>
+    </binning1>
+</params>

@@ -1,0 +1,40 @@
+アドレス,変数名,エンディアン,型,PLCスケール,PLC利用可否,コメント
+D019100,TblYSpeed,1,Float,10,TRUE,Ｙ軸スピード 試料扉に対して手前・奥
+D019102,FCDspeed,1,Float,10,TRUE,FCD速度
+D019103,FcdIndexPosition,2,Float,10,TRUE,FCD指定
+D019105,TblYIndexPosition,2,Float,100,TRUE,Ｙ軸指定
+D019108,stsUDPosition,2,Float,100,TRUE,試料テーブル位置　TPL（タッチパネル）表示用
+D019110,EXMTVSet,1,Int,1,FALSE,EXM2-150管電圧
+D019111,EXMTCSet,1,Int,1,FALSE,EXM2-150管電流
+D019113,stsRotPosition,2,Float,100,TRUE,回転テーブル表示位置
+D019116,stsXStgPosition,1,Float,100,TRUE,微調Ｘ軸位置
+D019118,stsYStgPosition,1,Float,100,TRUE,微調Ｙ軸位置
+D019120,FddSpeed,1,Float,10,TRUE,FDD速度
+D019121,FddindexPosition,2,Float,10,TRUE,FDD指定位置
+D019123,ScanStartPos,1,Int,1,FALSE,未使用
+D019124,TrgTime,2,Int,1,FALSE,未使用
+D019126,TrgCycleTime,2,Int,1,FALSE,未使用
+D019128,XrayXSpeed,1,Float,1,FALSE,未使用　X線源スピード　Ｘ軸
+D019129,XrayXPos,1,Float,1,FALSE,未使用　X線源位置　Ｘ軸
+D019132,XrayYSpeed,1,Float,1,FALSE,未使用　X線源スピード　Y軸
+D019133,XrayYPos,1,Float,1,FALSE,未使用　X線源位置　Y軸
+D019136,XrayRotSpeed,1,Float,1,FALSE,未使用　X線源スピード　回転軸
+D019137,XrayRotPos,2,Float,1,FALSE,未使用　X線回位置　回転
+D019139,FCDLimit,1,Int,1,TRUE,FCDFine　同じ値を送信している 190mm
+D019140,FCDFineLimit,1,Int,1,TRUE,FCDFineLimit　同じ値を送信している 190mm
+D019141,FIDFineLimit,1,Float,1,FALSE,未使用　FIDFineLimit
+D019142,stsTiltPosition,2,Int,1,FALSE,未使用　チルトテーブルの位置
+D019144,stsTiltRotPosition,2,Int,1,FALSE,未使用　チルトテーブルの回転
+D019146,stsLinearUDPosition,2,Int,1,FALSE,未使用　リニアスケールの昇降位置　stsLinearUDPosition
+D019148,LargeTableRingWidth,1,Float,10,TRUE,拡張リングを装着したときのFDDリミット変更分の距離 10倍する必要があるのか…
+D019200,ColiUIndexPosition,1,Float,1,FALSE,未使用　コリメータ　指定位置　上　電池用
+D019201,ColiDIndexPosition,1,Float,1,FALSE,未使用　コリメータ　指定位置　下　電池用
+D019400,XrayCameraUDIndexPosition,2,Float,1,FALSE,高速X線カメラ　昇降位置
+D110200,FCDOrigin,2,Float,100,TRUE,FCD原点位置
+D110202,FCDHome,2,Float,100,TRUE,FCDホーム位置
+D110500,FCD_Coli1,2,Float,10,TRUE,X線源筐体支台の干渉回避位置(FCD)の1
+D110502,TblY_Coli1,2,Float,100,TRUE,X線源筐体支台の干渉回避位置(TableY)の1
+D110504,FCD_Coli2,2,Float,10,TRUE,X線源筐体支台の干渉回避位置(FCD)の2
+D110506,TblY_Coli2,2,Float,100,TRUE,X線源筐体支台の干渉回避位置(TableY)の2
+
+

@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBFACDB8-FF2C-4C79-8298-8D0E5026B227}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TXSMechaControl</RootNamespace>
+    <AssemblyName>TXSMechaControl</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuxSel\AuxSel_Provider.cs" />
+    <Compile Include="BusyCtrl\BusyCtrl.cs" />
+    <Compile Include="BusyCtrl\IBusyCtrl.cs" />
+    <Compile Include="CommonComp\BindNUD_WOSld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommonComp\BindNUD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommonComp\BindSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommonComp\UC_H_BindSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonComp\UC_H_BindSlider.Designer.cs">
+      <DependentUpon>UC_H_BindSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonComp\UC_SelCtrlSpd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonComp\UC_SelCtrlSpd.Designer.cs">
+      <DependentUpon>UC_SelCtrlSpd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonComp\UC_StsCheckBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonComp\UC_StsCheckBtn.Designer.cs">
+      <DependentUpon>UC_StsCheckBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonComp\UC_StsCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonComp\UC_StsCheck.Designer.cs">
+      <DependentUpon>UC_StsCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Collision.cs" />
+    <Compile Include="Common\Limit.cs" />
+    <Compile Include="Common\MoveDirection.cs" />
+    <Compile Include="Common\MoveStatus.cs" />
+    <Compile Include="Common\Speed.cs" />
+    <Compile Include="Axis\FCD\FCD.cs" />
+    <Compile Include="Axis\FCD\FCD_Param.cs" />
+    <Compile Include="Axis\FCD\FCD_Provider.cs" />
+    <Compile Include="Axis\FDD\FDD_Param.cs" />
+    <Compile Include="Axis\FStage\IFStage.cs" />
+    <Compile Include="Axis\FStage\UC_OptFStage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\FStage\UC_OptFStage.Designer.cs">
+      <DependentUpon>UC_OptFStage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\FStage\FStage.cs" />
+    <Compile Include="Axis\FStage\FStage_Param.cs" />
+    <Compile Include="Axis\FStage\FStage_Provider.cs" />
+    <Compile Include="MechaIntegrate\FrmConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MechaIntegrate\FrmConfirm.Designer.cs">
+      <DependentUpon>FrmConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\FCD\IFCD.cs" />
+    <Compile Include="MechaIntegrate\UC_Confirm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_Confirm.Designer.cs">
+      <DependentUpon>UC_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonComp\UC_NUM_Update.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonComp\UC_NUM_Update.Designer.cs">
+      <DependentUpon>UC_NUM_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\FDD\FDD_Provider.cs" />
+    <Compile Include="Axis\FDD\FDD.cs" />
+    <Compile Include="Axis\FDD\IFDD.cs" />
+    <Compile Include="MechaIntegrate\FrmMechaMaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MechaIntegrate\FrmMechaMaint.designer.cs">
+      <DependentUpon>FrmMechaMaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MechaIntegrate\IMechaIntegrate.cs" />
+    <Compile Include="MechaIntegrate\MechaIntegrate.cs" />
+    <Compile Include="MechaIntegrate\MechaParam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MechaParam.settings</DependentUpon>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_MainPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_MainPanel.designer.cs">
+      <DependentUpon>UC_MainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\FCD\UC_OptFCD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\FCD\UC_OptFCD.designer.cs">
+      <DependentUpon>UC_OptFCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\FDD\UC_OptFDD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\FDD\UC_OptFDD.designer.cs">
+      <DependentUpon>UC_OptFDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_OptAUX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_OptAUX.designer.cs">
+      <DependentUpon>UC_OptAUX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_SelAxis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MechaIntegrate\UC_SelAxis.designer.cs">
+      <DependentUpon>UC_SelAxis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuxSel\IAuxSel.cs" />
+    <Compile Include="AuxSel\AuxSel.cs" />
+    <Compile Include="MechaRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MechaRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OriginCtrl\IOriginCtrl.cs" />
+    <Compile Include="OriginCtrl\OriginCtrl.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\Rotation\Rotation_Param.cs" />
+    <Compile Include="Axis\Rotation\Rot_Provider.cs" />
+    <Compile Include="Axis\Rotation\IRotation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Axis\Rotation\Rotation.cs" />
+    <Compile Include="Axis\Rotation\UC_OptRot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\Rotation\UC_OptRot.Designer.cs">
+      <DependentUpon>UC_OptRot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\SpOp\SpecialOption.cs" />
+    <Compile Include="Axis\TblY\TblY_Provider.cs" />
+    <Compile Include="Axis\TblY\TblY_Param.cs" />
+    <Compile Include="Axis\TblY\ITableY.cs" />
+    <Compile Include="Axis\TblY\TableY.cs" />
+    <Compile Include="Axis\TblY\UC_OptTblY.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\TblY\UC_OptTblY.Designer.cs">
+      <DependentUpon>UC_OptTblY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TXSMecha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>TXSMecha.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\UpDown\IUdStage.cs" />
+    <Compile Include="Axis\UpDown\Ud_Param.cs" />
+    <Compile Include="Axis\UpDown\UC_OptUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\UpDown\UC_OptUD.Designer.cs">
+      <DependentUpon>UC_OptUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\UpDown\UdStage.cs" />
+    <Compile Include="Axis\UpDown\Ud_Provider.cs" />
+    <Compile Include="UTest\ISomthing_TEST.cs" />
+    <Compile Include="UTest\Test.cs" />
+    <Compile Include="UTest\Test_Provider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Itc.Common.csproj">
+      <Project>{0eaa0a72-0e0a-444b-be95-0d14d29b2aa8}</Project>
+      <Name>Itc.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BoardControl\BoardControl\BoardControl.csproj">
+      <Project>{E9DC19B1-AA8B-46F3-BAA4-59E617AF300B}</Project>
+      <Name>BoardControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dio\DioController\DioController.csproj">
+      <Project>{9526648E-BDE2-448E-8A25-CF1E3A7A9B7D}</Project>
+      <Name>DioController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dio\DioLib\DioLib.csproj">
+      <Project>{30A848DA-C39F-4918-858B-C78DD01A0F96}</Project>
+      <Name>DioLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Control\Itc.Controls.csproj">
+      <Project>{8039159c-cc2b-4bbb-9e9c-0955aa0bb3af}</Project>
+      <Name>Itc.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PLC\PLCController\PLCController.csproj">
+      <Project>{FDB2DE77-DF80-4155-B239-27ED307140B9}</Project>
+      <Name>PLCController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MechaIntegrate\MechaParam.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MechaParam.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MechaTbl\mechapara.csv" />
+    <None Include="Properties\DataSources\TXSMechaControl.FCD.FCD.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TXSMecha.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>TXSMecha.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CommonComp\UC_H_BindSlider.resx">
+      <DependentUpon>UC_H_BindSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonComp\UC_SelCtrlSpd.resx">
+      <DependentUpon>UC_SelCtrlSpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\FStage\UC_OptFStage.resx">
+      <DependentUpon>UC_OptFStage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonComp\UC_StsCheckBtn.resx">
+      <DependentUpon>UC_StsCheckBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonComp\UC_StsCheck.resx">
+      <DependentUpon>UC_StsCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaIntegrate\FrmConfirm.resx">
+      <DependentUpon>FrmConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaIntegrate\UC_Confirm.resx">
+      <DependentUpon>UC_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonComp\UC_NUM_Update.resx">
+      <DependentUpon>UC_NUM_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaIntegrate\FrmMechaMaint.resx">
+      <DependentUpon>FrmMechaMaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaIntegrate\UC_MainPanel.resx">
+      <DependentUpon>UC_MainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\FCD\UC_OptFCD.resx">
+      <DependentUpon>UC_OptFCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\FDD\UC_OptFDD.resx">
+      <DependentUpon>UC_OptFDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaIntegrate\UC_OptAUX.resx">
+      <DependentUpon>UC_OptAUX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaIntegrate\UC_SelAxis.resx">
+      <DependentUpon>UC_SelAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MechaRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MechaRes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\Rotation\UC_OptRot.resx">
+      <DependentUpon>UC_OptRot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\TblY\UC_OptTblY.resx">
+      <DependentUpon>UC_OptTblY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\UpDown\UC_OptUD.resx">
+      <DependentUpon>UC_OptUD.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>3.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

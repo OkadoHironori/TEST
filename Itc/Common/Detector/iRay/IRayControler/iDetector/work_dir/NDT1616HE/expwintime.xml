@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<params>
+	<condition1>
+		<binning0>
+			<zoom0 value="0">
+				<param1 type="int" name="acquire time" value="64"/>
+				<param2 type="float" name="clear period" value="2.8"/>
+			</zoom0>
+		</binning0>
+		
+		<binning1>
+			<zoom0 value="0">
+				<param1 type="int" value="64"/>
+				<param2 type="float" value="2.8"/>
+			</zoom0>
+		</binning1>
+		
+		<binning3>
+			<zoom0 value="0">
+				<param1 type="int" value="33"/>
+				<param2 type="float" value="2.8"/>
+			</zoom0>
+		</binning3>
+	</condition1>
+</params>

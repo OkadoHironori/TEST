@@ -1,0 +1,42 @@
+RotStep,0.001,1pls当たりの移動量deg(mm)/pls
+RotMag,1,速度倍率
+RotDir,-1,アドレス増加方向1:CWで増加 -1:CCWで増加
+RotPlsMode,4,パルス出力方式4:2パルス、6:位相差
+RotPlsMult,2,"逓倍設定0:1,1:2,2:4"
+RotRateTime,0.5,加速時間sec
+RotSpdFL,0.06,起動速度(FL)deg(mm)/sec
+RotManualSpd,20,手動時の速度(FH)deg(mm)/sec
+RotManualLimitSpd,20,手動時の最大速度deg(mm)/sec
+RotManualTimeOut,600000,手動操作のタイムアウト時間msec
+RotIndexRateTime,0.005,INDEX動作時の加速時間sec
+RotIndexSpdFL,7,INDEX動作時の起動速度(FL)deg(mm)/sec
+RotIndexSpdFH,20,INDEX動作時の速度(FH)deg(mm)/sec
+RotIndexTimeOut,120000,INDEX動作時のタイムアウト時間msec
+RotOriginSpdFL,0.01,"原点サーチ時の起動速度(FL),RFAにも適用deg(mm)/sec"
+RotOriginSpdFH,20,原点サーチ時の速度(FH)deg(mm)/sec
+RotOriginTimeOut,150000,原点サーチのタイムアウト時間msec
+RotOriginShift,-5,原点すり抜け量 deg(mm)
+RotOriginPos,0,原点座標（原点復帰後の位置）deg(mm)
+RotOriginOffset,0,原点オフセット（原点復帰後の移動量）deg(mm)
+RotOriginMode,2,原点復帰モード0:OLSon、1:OLS+RFA、2:OLS+Z相、4:OLS+RFA+Z相、6:ELS+RFA、7:ELS+RFA+Z相
+RotOriginDir,1,原点復帰の方向0:CCW方向 1:CW方向
+RotOriginNoChk,1,原点復帰確認0:有効、1:無効
+RotStopTimeOut,1000,停止動作のタイムアウト時間msec
+RotLmtNoChk,1,ソフトリミット確認0:有効、1:無効
+RotCwLmtPos,20,CWソフトリミットdeg(mm)
+RotCcwLmtPos,-380,CCWソフトリミットdeg(mm)
+RotMotorType,1,モータ種別0:パルス 1:サーボ 2:その他
+RotOrgPolarity,0,原点センサ極性0:a接、1:b接
+RotLmtPolarity,0,回転リミット極性0:a接、1:b接
+RotDlsPolarity,1,減速センサ極性0:a接、1:b接
+RotAlmPolarity,1,ALM信号極性0:a接、1:b接
+RotElsMode,0,ELS検出時の動作0:即停止、1:減速停止
+RotNoSlowMode,1,減速制御有無0:有効、1:無効
+RotCrLowPos,0,CW減速座標deg(mm)
+RotCrHiPos,0,CCW減速座標deg(mm)
+RotSlowSpd,1,減速時の速度deg(mm)/sec
+RotCtrIncrement,0.01,制御可能な表示値(string)
+RotMaxValue,0,表示上の最大値
+RotMinValue,-360,表示上の最小値
+RotInpos,1.00,Inpos範囲(mm)
+

@@ -1,0 +1,41 @@
+XStgStep,0.002,deg(mm)/pls
+XStgMag,1,
+XStgDir,1,1:CWで増加 -1:CCWで増加
+XStgPlsMode,4,4:2パルス、6:位相差
+XStgPlsMult,2,"0:1,1:2,2:4"
+XStgRateTime,0.5,sec
+XStgSpdFL,0.05,deg(mm)/sec
+XStgManualSpd,0.5,deg(mm)/sec
+XStgManualLimitSpd,20,deg(mm)/sec
+XStgManualTimeOut,600000,msec
+XStgIndexRateTime,0.5,sec
+XStgIndexSpdFL,0.05,deg(mm)/sec
+XStgIndexSpdFH,20,deg(mm)/sec
+XStgIndexTimeOut,120000,msec
+XStgOriginSpdFL,0.05,deg(mm)/sec
+XStgOriginSpdFH,7,deg(mm)/sec
+XStgOriginTimeOut,120000,msec
+XStgOriginShift,0,deg(mm)
+XStgOriginPos,-51,deg(mm)原点位置
+XStgOriginOffset,51,deg(mm)原点からシフト位置
+XStgOriginMode,6,0:OLSon、1:OLS+RFA、2:OLS+Z相、4:OLS+RFA+Z相、6:ELS+RFA、7:ELS+RFA+Z相
+XStgOriginDir,1,0:CCW方向 1:CW方向
+XStgOriginNoChk,1,原点復帰確認0:有効、1:無効
+XStgStopTimeOut,1000,msec
+XStgLmtNoChk,1,0:有効、1:無効
+XStgCwLmtPos,50,deg(mm)
+XStgCcwLmtPos,-50,deg(mm)
+XStgMotorType,0,0:パルス 1:サーボ 2:その他
+XStgOrgPolarity,0,0:a接、1:b接
+XStgLmtPolarity,1,0:a接、1:b接
+XStgDlsPolarity,1,0:a接、1:b接
+XStgAlmPolarity,0,0:a接、1:b接
+XStgElsMode,0,0:即停止、1:減速停止
+XStgNoSlowMode,1,0:有効、1:無効
+XStgCrLowPos,0,deg(mm)減速用
+XStgCrHiPos,0,deg(mm)減速用
+XStgSlowSpd,1,deg(mm)/sec
+XStgCtrIncrement,0.01,Index制御可能な最小単位(string)
+XStgMaxValue,50,mm　Indexで入力可能な最大値
+XStgMinValue,-50,mm　Indexで入力可能な最小値
+XStgInpos,1.00,Inpos範囲(mm)

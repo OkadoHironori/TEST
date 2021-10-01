@@ -1,0 +1,8 @@
+変数名,コマンド,コメント
+SetVoltage,HIV,管電圧設定[V](0～160)
+SetAmp,CUR,管電流設定[uA](0～200)
+SetXrayON,XON,Ｘ線出射開始
+SetXrayOFF,XOF,Ｘ線出射停止
+SetXrayWUP,WUP,ウォーミングアップ開始
+SetFOCUSE,CFS,フォーカスモードセット  (0～1)
+SetRESET,RST,過負荷保護解除

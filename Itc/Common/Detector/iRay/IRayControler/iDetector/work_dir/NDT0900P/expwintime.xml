@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<params>
+	<binning0>
+		<param1 type="int" value="400"/>
+		<param2 type="int" value="32"/>
+	</binning0>
+	<binning1>
+		<param1 type="int" value="400"/>
+		<param2 type="int" value="32"/>
+	</binning1>
+</params>

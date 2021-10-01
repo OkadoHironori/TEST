@@ -1,0 +1,4 @@
+番号,状態,コメント,
+1,SetTubeVoltage,出力管電圧
+2,SetTubeCurrent,出力管電流
+

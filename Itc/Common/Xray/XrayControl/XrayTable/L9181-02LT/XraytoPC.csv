@@ -1,0 +1,9 @@
+変数名,コマンド,頻度,コメント,
+CurrentXraySAR,SAR,TRUE,一括確認_状態_出力電圧_出力電流
+CurrentXraySVI,SVI,TRUE,一括確認_設定電圧_設定電流
+CurrentFocus,SFC,TRUE,焦点モード
+CurrentInterlock,SIN,TRUE,インターロック
+CurrentXrayType,TYP,FALSE,型名確認
+CurrentUnitOnTime,STM,FALSE,電源ON時間確認
+CurrentXrayOnTime,SXT,FALSE,X線ON時間確認
+CurrentError,SER,FALSE,エラー確認
