@@ -1,0 +1,1348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31131EEA-FCD7-426B-AA5A-F4D32B15BE36}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CT30K</RootNamespace>
+    <AssemblyName>CT30K</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\AnyCPU\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;XrayDebugOn ; SeqCommErrorDispOff ; _XrayErrorDispOff ; _DebugOn ; _IpClose ; NoCamera ; _TRANS_IMAGE_SERVER_USE ; _v9Seq ; _NoHalfCone ; _NoHalfAutoCentering ; _ImageProV3 ; _UserLog</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\AnyCPU\Release\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;XrayDebugOn; _DebugOn ; _IpClose ;NoCamera ; _TRANS_IMAGE_SERVER_USE ; _v9Seq ; _NoHalfCone ; _NoHalfAutoCentering ; _ImageProV3 ; _UserLog</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CT30K.Common">
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">..\CT30K.Common\bin\AnyCPU\Debug\CT30K.Common.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">..\CT30K.Common\bin\AnyCPU\Release\CT30K.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CTAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CTAPI\bin\AnyCPU\Release\CTAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SeqComm, Version=3.1.5452.20448, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">..\SeqComm\SeqComm\bin\Debug\SeqComm.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">..\SeqComm\SeqComm\bin\Release\SeqComm.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TransImage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">..\TransImage\bin\AnyCPU\Debug\TransImage.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">..\TransImage\bin\AnyCPU\Release\TransImage.dll</HintPath>
+    </Reference>
+    <Reference Include="XrayCtrl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">..\XrayCtrl\XrayCtrl\bin\Debug\XrayCtrl.dll</HintPath>
+      <HintPath Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">..\XrayCtrl\XrayCtrl\bin\Release\XrayCtrl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CTButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTButton.Designer.cs">
+      <DependentUpon>CTButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTCheckBox.Designer.cs">
+      <DependentUpon>CTCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTImageCanvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTImageCanvas.Designer.cs">
+      <DependentUpon>CTImageCanvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTLabel.Designer.cs">
+      <DependentUpon>CTLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTListBox.Designer.cs">
+      <DependentUpon>CTListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTProcess.Designer.cs">
+      <DependentUpon>CTProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTSliderH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTSliderH.Designer.cs">
+      <DependentUpon>CTSliderH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTSliderTrack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTSliderTrack.Designer.cs">
+      <DependentUpon>CTSliderTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTSliderV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTSliderV.Designer.cs">
+      <DependentUpon>CTSliderV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTSliderVScroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTSliderVScroll.Designer.cs">
+      <DependentUpon>CTSliderVScroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CTStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CTStatus.Designer.cs">
+      <DependentUpon>CTStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CWButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CWButton.Designer.cs">
+      <DependentUpon>CWButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NumTextBox.designer.cs">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseDialog.designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CTInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CTInputForm.designer.cs">
+      <DependentUpon>CTInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CTSliceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CTSliceForm.designer.cs">
+      <DependentUpon>CTSliceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FixedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddCommentFImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddCommentFImage.designer.cs">
+      <DependentUpon>frmAddCommentFImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCorrectionStatusModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCorrectionStatusModal.Designer.cs">
+      <DependentUpon>frmCorrectionStatusModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddition.designer.cs">
+      <DependentUpon>frmAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdjAlignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdjAlignment.Designer.cs">
+      <DependentUpon>frmAdjAlignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAllwlww.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAllwlww.Designer.cs">
+      <DependentUpon>frmAllwlww.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAutoCorrection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAutoCorrection.Designer.cs">
+      <DependentUpon>frmAutoCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAutoScanPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAutoScanPos.Designer.cs">
+      <DependentUpon>frmAutoScanPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBeamHardeningCorrection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBeamHardeningCorrection.Designer.cs">
+      <DependentUpon>frmBeamHardeningCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBHCImportError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBHCImportError.designer.cs">
+      <DependentUpon>frmBHCImportError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBHCMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBHCMessage.Designer.cs">
+      <DependentUpon>frmBHCMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmColor.designer.cs">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmComInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmComInit.designer.cs">
+      <DependentUpon>frmComInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCtDump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCtDump.designer.cs">
+      <DependentUpon>frmCtDump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDefectImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDefectImage.Designer.cs">
+      <DependentUpon>frmDefectImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDistanceBinarized.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDistanceBinarized.designer.cs">
+      <DependentUpon>frmDistanceBinarized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrect.Designer.cs">
+      <DependentUpon>frmDistanceCorrect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectNew.Designer.cs">
+      <DependentUpon>frmDistanceCorrectNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectPhantomFree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectPhantomFree.designer.cs">
+      <DependentUpon>frmDistanceCorrectPhantomFree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectResult.designer.cs">
+      <DependentUpon>frmDistanceCorrectResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectResultPhantomFree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDistanceCorrectResultPhantomFree.designer.cs">
+      <DependentUpon>frmDistanceCorrectResultPhantomFree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmExObsCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExObsCam.designer.cs">
+      <DependentUpon>frmExObsCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFCpara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFCpara.designer.cs">
+      <DependentUpon>frmFCpara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFilter.designer.cs">
+      <DependentUpon>frmFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFInteg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFInteg.Designer.cs">
+      <DependentUpon>frmFInteg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFormatTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFormatTransfer.designer.cs">
+      <DependentUpon>frmFormatTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGainCor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGainCor.Designer.cs">
+      <DependentUpon>frmGainCor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGainCorResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGainCorResult.designer.cs">
+      <DependentUpon>frmGainCorResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGainImageForMaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGainImageForMaint.designer.cs">
+      <DependentUpon>frmGainImageForMaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImagePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImagePrint.Designer.cs">
+      <DependentUpon>frmImagePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImageSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImageSave.designer.cs">
+      <DependentUpon>frmImageSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInputRoiData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInputRoiData.designer.cs">
+      <DependentUpon>frmInputRoiData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInvalidFileList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInvalidFileList.designer.cs">
+      <DependentUpon>frmInvalidFileList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLineInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLineInput.designer.cs">
+      <DependentUpon>frmLineInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMaint.Designer.cs">
+      <DependentUpon>frmMaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMechaAllResetMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMechaAllResetMove.designer.cs">
+      <DependentUpon>frmMechaAllResetMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMechaMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMechaMove.Designer.cs">
+      <DependentUpon>frmMechaMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMechaMoveWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMechaMoveWarning.designer.cs">
+      <DependentUpon>frmMechaMoveWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMechaReset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMechaReset.designer.cs">
+      <DependentUpon>frmMechaReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMtncpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMtncpass.designer.cs">
+      <DependentUpon>frmMtncpass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCheckTimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCheckTimer.designer.cs">
+      <DependentUpon>frmCheckTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmComment.designer.cs">
+      <DependentUpon>frmComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfig.designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCorrectionStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCorrectionStatus.designer.cs">
+      <DependentUpon>frmCorrectionStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCTMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCTMenu.Designer.cs">
+      <DependentUpon>frmCTMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFDiff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFDiff.Designer.cs">
+      <DependentUpon>frmFDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFEdge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFEdge.Designer.cs">
+      <DependentUpon>frmFEdge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImageControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImageControl.designer.cs">
+      <DependentUpon>frmImageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImageInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImageInfo.designer.cs">
+      <DependentUpon>frmImageInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInputBox.designer.cs">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMechaControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMechaControl.Designer.cs">
+      <DependentUpon>frmMechaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMulti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMulti.designer.cs">
+      <DependentUpon>frmMulti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOffset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOffset.designer.cs">
+      <DependentUpon>frmOffset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOffsetResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOffsetResult.designer.cs">
+      <DependentUpon>frmOffsetResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMessage.designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPictureRetouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPictureRetouch.Designer.cs">
+      <DependentUpon>frmPictureRetouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPostConeReconstruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPostConeReconstruction.Designer.cs">
+      <DependentUpon>frmPostConeReconstruction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProfGrph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProfGrph.Designer.cs">
+      <DependentUpon>frmProfGrph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmQueryWarmup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQueryWarmup.designer.cs">
+      <DependentUpon>frmQueryWarmup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmResult.designer.cs">
+      <DependentUpon>frmResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRetryCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRetryCondition.Designer.cs">
+      <DependentUpon>frmRetryCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRoiMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRoiMessage.designer.cs">
+      <DependentUpon>frmRoiMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRoiTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRoiTool.Designer.cs">
+      <DependentUpon>frmRoiTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRotationCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRotationCenter.designer.cs">
+      <DependentUpon>frmRotationCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRotationCenterBinarized.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRotationCenterBinarized.Designer.cs">
+      <DependentUpon>frmRotationCenterBinarized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRotationCenterResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRotationCenterResult.designer.cs">
+      <DependentUpon>frmRotationCenterResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSaveMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSaveMovie.Designer.cs">
+      <DependentUpon>frmSaveMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmScanCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanCondition.Designer.cs">
+      <DependentUpon>frmScanCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmScanControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanControl.Designer.cs">
+      <DependentUpon>frmScanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmScanImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanImage.Designer.cs">
+      <DependentUpon>frmScanImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmScanoCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanoCondition.Designer.cs">
+      <DependentUpon>frmScanoCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmScanPositionEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanPositionEntry.Designer.cs">
+      <DependentUpon>frmScanPositionEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmScanPositionResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanPositionResult.Designer.cs">
+      <DependentUpon>frmScanPositionResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSliceplan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSliceplan.designer.cs">
+      <DependentUpon>frmSliceplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSlicePlanCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSlicePlanCheck.Designer.cs">
+      <DependentUpon>frmSlicePlanCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSpeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSpeed.designer.cs">
+      <DependentUpon>frmSpeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStart.designer.cs">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStatus.Designer.cs">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSubtraction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSubtraction.designer.cs">
+      <DependentUpon>frmSubtraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTitanXrayInfomatiion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTitanXrayInfomatiion.Designer.cs">
+      <DependentUpon>frmTitanXrayInfomatiion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTransImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTransImage.designer.cs">
+      <DependentUpon>frmTransImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTransImageControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTransImageControl.Designer.cs">
+      <DependentUpon>frmTransImageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTransImageInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTransImageInfo.Designer.cs">
+      <DependentUpon>frmTransImageInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVertical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVertical.Designer.cs">
+      <DependentUpon>frmVertical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVerticalBinarized.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVerticalBinarized.Designer.cs">
+      <DependentUpon>frmVerticalBinarized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVerticalResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVerticalResult.designer.cs">
+      <DependentUpon>frmVerticalResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVirtualSeqComm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVirtualSeqComm.designer.cs">
+      <DependentUpon>frmVirtualSeqComm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVirtualXrayControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVirtualXrayControl.designer.cs">
+      <DependentUpon>frmVirtualXrayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmXrayControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmXrayControl.Designer.cs">
+      <DependentUpon>frmXrayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmXrayInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmXrayInformation.designer.cs">
+      <DependentUpon>frmXrayInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmXrayTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmXrayTool.designer.cs">
+      <DependentUpon>frmXrayTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmXrayWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmXrayWarning.designer.cs">
+      <DependentUpon>frmXrayWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HoriVertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoriVertForm.designer.cs">
+      <DependentUpon>HoriVertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CStCamera.cs" />
+    <Compile Include="Modules\mod2ndXray.cs" />
+    <Compile Include="Modules\CallImageProFunction.cs" />
+    <Compile Include="Modules\BitmapImageControl.cs" />
+    <Compile Include="Modules\clsImagePro.cs" />
+    <Compile Include="Modules\CTSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Resources.cs" />
+    <Compile Include="Modules\mod2ndDetctor.cs" />
+    <Compile Include="Modules\modCommon.cs" />
+    <Compile Include="Modules\modDeclare.cs" />
+    <Compile Include="Modules\modDetShift.cs" />
+    <Compile Include="Modules\modExObsCam.cs" />
+    <Compile Include="Modules\modFileIO.cs" />
+    <Compile Include="Modules\modGlobal.cs" />
+    <Compile Include="Modules\modHighSpeedCamera.cs" />
+    <Compile Include="Modules\modImageInfo.cs" />
+    <Compile Include="Modules\modOPTION.cs" />
+    <Compile Include="Modules\modSound.cs" />
+    <Compile Include="Modules\modTitan.cs" />
+    <Compile Include="Modules\modXrayAutoVI.cs" />
+    <Compile Include="Modules\RoiData.cs" />
+    <Compile Include="Classes\ThreadEx.cs" />
+    <Compile Include="Modules\DrawRoi.cs" />
+    <Compile Include="Modules\Figure.cs" />
+    <Compile Include="Modules\FluoroIP.cs" />
+    <Compile Include="Modules\ImagePrint.cs" />
+    <Compile Include="Modules\Ipc32v5.cs" />
+    <Compile Include="Modules\Maint.cs" />
+    <Compile Include="Modules\modAutoPos.cs" />
+    <Compile Include="Modules\modBHC.cs" />
+    <Compile Include="Modules\modCT30K.cs" />
+    <Compile Include="Modules\modCTBusy.cs" />
+    <Compile Include="Modules\modDoubleOblique.cs" />
+    <Compile Include="Modules\modImgProc.cs" />
+    <Compile Include="Modules\modLibrary.cs" />
+    <Compile Include="Modules\modMechaControl.cs" />
+    <Compile Include="Modules\modReconst.cs" />
+    <Compile Include="Modules\modRoikey.cs" />
+    <Compile Include="Modules\modScanCondition.cs" />
+    <Compile Include="Modules\modScanCorrect.cs" />
+    <Compile Include="Modules\modScanCorrectNew.cs" />
+    <Compile Include="Modules\modSeqComm.cs" />
+    <Compile Include="Modules\modXrayControl.cs" />
+    <Compile Include="Modules\modXrayinfo.cs" />
+    <Compile Include="Modules\ScanCorrect.cs" />
+    <Compile Include="Modules\StCamD.cs" />
+    <Compile Include="Modules\StringTable.cs" />
+    <Compile Include="Modules\TabPageCtrl.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\UpdReceiver.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Controls\CTButton.resx">
+      <DependentUpon>CTButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTCheckBox.resx">
+      <DependentUpon>CTCheckBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTImageCanvas.resx">
+      <DependentUpon>CTImageCanvas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTLabel.resx">
+      <DependentUpon>CTLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTListBox.resx">
+      <DependentUpon>CTListBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTProcess.resx">
+      <DependentUpon>CTProcess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTSliderH.resx">
+      <DependentUpon>CTSliderH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTSliderTrack.resx">
+      <DependentUpon>CTSliderTrack.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTSliderV.resx">
+      <DependentUpon>CTSliderV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTSliderVScroll.resx">
+      <DependentUpon>CTSliderVScroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CTStatus.resx">
+      <DependentUpon>CTStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CWButton.resx">
+      <DependentUpon>CWButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumTextBox.resx">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CTInputForm.resx">
+      <DependentUpon>CTInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CTSliceForm.resx">
+      <DependentUpon>CTSliceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FixedForm.resx">
+      <DependentUpon>FixedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddCommentFImage.resx">
+      <DependentUpon>frmAddCommentFImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCorrectionStatusModal.resx">
+      <DependentUpon>frmCorrectionStatusModal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddition.resx">
+      <DependentUpon>frmAddition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdjAlignment.resx">
+      <DependentUpon>frmAdjAlignment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAllwlww.resx">
+      <DependentUpon>frmAllwlww.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAutoCorrection.resx">
+      <DependentUpon>frmAutoCorrection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAutoScanPos.resx">
+      <DependentUpon>frmAutoScanPos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBeamHardeningCorrection.resx">
+      <DependentUpon>frmBeamHardeningCorrection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBHCImportError.resx">
+      <DependentUpon>frmBHCImportError.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBHCMessage.resx">
+      <DependentUpon>frmBHCMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmColor.resx">
+      <DependentUpon>frmColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmComInit.resx">
+      <DependentUpon>frmComInit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCtDump.resx">
+      <DependentUpon>frmCtDump.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDefectImage.resx">
+      <DependentUpon>frmDefectImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDistanceBinarized.resx">
+      <DependentUpon>frmDistanceBinarized.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDistanceCorrect.resx">
+      <DependentUpon>frmDistanceCorrect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDistanceCorrectNew.resx">
+      <DependentUpon>frmDistanceCorrectNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDistanceCorrectPhantomFree.resx">
+      <DependentUpon>frmDistanceCorrectPhantomFree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDistanceCorrectResult.resx">
+      <DependentUpon>frmDistanceCorrectResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDistanceCorrectResultPhantomFree.resx">
+      <DependentUpon>frmDistanceCorrectResultPhantomFree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExObsCam.resx">
+      <DependentUpon>frmExObsCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFCpara.resx">
+      <DependentUpon>frmFCpara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFDiff.resx">
+      <DependentUpon>frmFDiff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFEdge.resx">
+      <DependentUpon>frmFEdge.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFilter.resx">
+      <DependentUpon>frmFilter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFInteg.resx">
+      <DependentUpon>frmFInteg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFormatTransfer.resx">
+      <DependentUpon>frmFormatTransfer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGainCor.resx">
+      <DependentUpon>frmGainCor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGainCorResult.resx">
+      <DependentUpon>frmGainCorResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGainImageForMaint.resx">
+      <DependentUpon>frmGainImageForMaint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImagePrint.resx">
+      <DependentUpon>frmImagePrint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImageSave.resx">
+      <DependentUpon>frmImageSave.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInputRoiData.resx">
+      <DependentUpon>frmInputRoiData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInvalidFileList.resx">
+      <DependentUpon>frmInvalidFileList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLineInput.resx">
+      <DependentUpon>frmLineInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMaint.resx">
+      <DependentUpon>frmMaint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMechaAllResetMove.resx">
+      <DependentUpon>frmMechaAllResetMove.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMechaMove.resx">
+      <DependentUpon>frmMechaMove.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMechaMoveWarning.resx">
+      <DependentUpon>frmMechaMoveWarning.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMechaReset.resx">
+      <DependentUpon>frmMechaReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMtncpass.resx">
+      <DependentUpon>frmMtncpass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCheckTimer.resx">
+      <DependentUpon>frmCheckTimer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmComment.resx">
+      <DependentUpon>frmComment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCorrectionStatus.resx">
+      <DependentUpon>frmCorrectionStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCTMenu.resx">
+      <DependentUpon>frmCTMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImageControl.resx">
+      <DependentUpon>frmImageControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImageInfo.resx">
+      <DependentUpon>frmImageInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInputBox.resx">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMechaControl.resx">
+      <DependentUpon>frmMechaControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMulti.resx">
+      <DependentUpon>frmMulti.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOffset.resx">
+      <DependentUpon>frmOffset.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOffsetResult.resx">
+      <DependentUpon>frmOffsetResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPictureRetouch.resx">
+      <DependentUpon>frmPictureRetouch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPostConeReconstruction.resx">
+      <DependentUpon>frmPostConeReconstruction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProfGrph.resx">
+      <DependentUpon>frmProfGrph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmQueryWarmup.resx">
+      <DependentUpon>frmQueryWarmup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmResult.resx">
+      <DependentUpon>frmResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRetryCondition.resx">
+      <DependentUpon>frmRetryCondition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRoiMessage.resx">
+      <DependentUpon>frmRoiMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRoiTool.resx">
+      <DependentUpon>frmRoiTool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRotationCenter.resx">
+      <DependentUpon>frmRotationCenter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRotationCenterBinarized.resx">
+      <DependentUpon>frmRotationCenterBinarized.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRotationCenterResult.resx">
+      <DependentUpon>frmRotationCenterResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSaveMovie.resx">
+      <DependentUpon>frmSaveMovie.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanCondition.resx">
+      <DependentUpon>frmScanCondition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanControl.resx">
+      <DependentUpon>frmScanControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanImage.resx">
+      <DependentUpon>frmScanImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanoCondition.resx">
+      <DependentUpon>frmScanoCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanPositionEntry.resx">
+      <DependentUpon>frmScanPositionEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanPositionResult.resx">
+      <DependentUpon>frmScanPositionResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSliceplan.resx">
+      <DependentUpon>frmSliceplan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSlicePlanCheck.resx">
+      <DependentUpon>frmSlicePlanCheck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSpeed.resx">
+      <DependentUpon>frmSpeed.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStart.resX">
+      <DependentUpon>frmStart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStatus.resx">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSubtraction.resx">
+      <DependentUpon>frmSubtraction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTitanXrayInfomatiion.resx">
+      <DependentUpon>frmTitanXrayInfomatiion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTransImage.resx">
+      <DependentUpon>frmTransImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTransImageControl.resx">
+      <DependentUpon>frmTransImageControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTransImageInfo.resx">
+      <DependentUpon>frmTransImageInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVertical.resx">
+      <DependentUpon>frmVertical.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVerticalBinarized.resx">
+      <DependentUpon>frmVerticalBinarized.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVerticalResult.resx">
+      <DependentUpon>frmVerticalResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVirtualSeqComm.resx">
+      <DependentUpon>frmVirtualSeqComm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVirtualXrayControl.resx">
+      <DependentUpon>frmVirtualXrayControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmXrayControl.resx">
+      <DependentUpon>frmXrayControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmXrayInformation.resx">
+      <DependentUpon>frmXrayInformation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmXrayTool.resx">
+      <DependentUpon>frmXrayTool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmXrayWarning.resx">
+      <DependentUpon>frmXrayWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoriVertForm.resx">
+      <DependentUpon>HoriVertForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-Hans.resx" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Bitmaps\CTListBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bitmaps\CT.bmp" />
+    <Content Include="Bitmaps\LeftRotate.png" />
+    <None Include="Icons\XrayTubeR1.ico" />
+    <None Include="Bitmaps\PlayHS.bmp" />
+    <None Include="Bitmaps\LeftRotate1.png" />
+    <Content Include="Bitmaps\RightRotate.png" />
+    <None Include="Bitmaps\RightRotate1.png" />
+    <Content Include="Bitmaps\TosIndustrialCT.bmp" />
+    <None Include="Bitmaps\tosindustrialct1.bmp" />
+    <Content Include="Bitmaps\TosMicroCT.bmp" />
+    <None Include="Cursor\DRAGMOVE.CUR" />
+    <None Include="Bitmaps\tosmicroct1.bmp" />
+    <Content Include="Icons\ARW01DN.ICO" />
+    <None Include="Icons\ARW01DN1.ICO" />
+    <Content Include="Icons\ARW01DNLM.ICO" />
+    <None Include="Icons\ARW01DNLM1.ICO" />
+    <Content Include="Icons\ARW01LT.ICO" />
+    <None Include="Icons\ARW01LT1.ICO" />
+    <Content Include="Icons\ARW01LTLM.ICO" />
+    <None Include="Icons\ARW01LTLM1.ICO" />
+    <Content Include="Icons\ARW01RT.ICO" />
+    <None Include="Icons\ARW01RT1.ICO" />
+    <Content Include="Icons\ARW01RTLM.ICO" />
+    <None Include="Icons\ARW01RTLM1.ICO" />
+    <Content Include="Icons\ARW01UP.ICO" />
+    <None Include="Icons\ARW01UP1.ICO" />
+    <Content Include="Icons\ARW01UPLM.ICO" />
+    <None Include="Icons\ARW01UPLM1.ICO" />
+    <Content Include="Icons\XrayTube.ico" />
+    <None Include="Icons\XrayTubeG.ico" />
+    <None Include="Icons\XrayTubeG1.ico" />
+    <Content Include="Icons\XrayTubeR.ico" />
+    <EmbeddedResource Include="Bitmaps\NumTextBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows インストーラー 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
