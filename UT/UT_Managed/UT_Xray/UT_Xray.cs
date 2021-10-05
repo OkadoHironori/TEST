@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,7 +45,6 @@ namespace UT_Managed.UT_Xray
 
             using (var service = servicescollection.BuildServiceProvider())
             {
-                var seri = service.GetService<IXraySerialService>();
                 var cttox = service.GetService<IPCToXray>();
                 cttox.EndChangedSts += (s, e) =>
                 {
@@ -53,8 +53,9 @@ namespace UT_Managed.UT_Xray
                     evcnt++;
                 };
 
-                if(NoComPort)
+                if (NoComPort)
                 {
+                    var seri = service.GetService<IXraySerialService>();
                     Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
                     var tstcmd = $"SAR 2 50 30 0 0 0 0{Environment.NewLine}";
                     seri.DoCommand(tstcmd);
@@ -75,6 +76,7 @@ namespace UT_Managed.UT_Xray
 
                 if (NoComPort)
                 {
+                    var seri = service.GetService<IXraySerialService>();
                     Task.Run(() => { cttox.DoSetCurrent(setvalue); });
                     var dd = $"SVI {setvalue} {setvaluecur}{Environment.NewLine}";
                     seri.DoCommand(dd);
@@ -97,7 +99,6 @@ namespace UT_Managed.UT_Xray
         {
             List<string> cmd = new List<string>();
             int evcnt = 0;
-            bool DebugMode = false;
 
             ServiceCollection servicescollection = new ServiceCollection();
             servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
@@ -109,7 +110,7 @@ namespace UT_Managed.UT_Xray
                                             new XrayCheckerIrregularity(new XrayAddres_L9181_02LT()),
                                             new XrayAddres_L9181_02LT())
                 {
-                    IsDebugMode = DebugMode,
+                    IsDebugMode = NoComPort,
                 };
             });
             servicescollection.AddSingleton<IXrayToPC, XrayToPC>();
@@ -121,21 +122,41 @@ namespace UT_Managed.UT_Xray
                 cttox.EndChangedSts += (s, e) =>
                 {
                     PCToXray xss = s as PCToXray;
+                    cmd.Add(xss.SFC);
                     evcnt++;
                 };
-                cttox.DoSetFocus("SMALL");
-                Task.WaitAll(Task.Delay(2000));
-                cttox.DoSetFocus("MIDDLE");
+
+                if (NoComPort)
+                {
+                    var seri = service.GetService<IXraySerialService>();
+                    Task.Run(() => { cttox.DoSetFocus("SMALL"); });
+                    var dd1 = $"SFC 0{Environment.NewLine}";
+                    seri.DoCommand(dd1);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
+                    Task.Run(() => { cttox.DoSetFocus("MIDDLE"); });
+                    var dd2 = $"SFC 1{Environment.NewLine}";
+                    seri.DoCommand(dd2);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
+
+                }
+                else
+                {
+                    cttox.DoSetFocus("SMALL");
+                    Task.WaitAll(Task.Delay(2000));
+                    cttox.DoSetFocus("MIDDLE");
+                }
             };
+
+            Assert.AreEqual(cmd.LastOrDefault(), "MIDDLE");
             Assert.AreEqual(2, evcnt);
         }
 
         [TestMethod]
-        public void X線ON()
+        public void X線ONとOFF()
         {
             List<string> cmd = new List<string>();
             int evcnt = 0;
-            bool DebugMode = false;
+            bool DebugMode = NoComPort;
 
             ServiceCollection servicescollection = new ServiceCollection();
             servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
@@ -159,23 +180,54 @@ namespace UT_Managed.UT_Xray
                 cttox.EndXrayOFF += (s, e) =>
                 {
                     PCToXray xss = s as PCToXray;
+                    cmd.Add(xss.STSProperty.Status);
+                    evcnt++;
+                };
+                cttox.EndXrayON += (s, e) =>
+                {
+                    PCToXray xss = s as PCToXray;
+                    cmd.Add(xss.STSProperty.Status);
                     evcnt++;
                 };
 
-                cttox.DoXrayOn();
+                if (NoComPort)
+                {
+                    var seri = service.GetService<IXraySerialService>();
+                    var dd0 = $"SAR 2 50 30 0 0 0 0{Environment.NewLine}";
+                    seri.DoCommand(dd0);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
 
-                Task.WaitAll(Task.Delay(2000));
+                    Task.Run(() => { cttox.DoXrayOn(); });
+                    var dd1 = $"SAR 3 50 30 0 0 0 0{Environment.NewLine}";
+                    seri.DoCommand(dd1);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
+                    var dd2 = $"SVI 50 30{Environment.NewLine}";
+                    seri.DoCommand(dd2);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(2)));
 
-                cttox.DoXrayOFF();
+                    Task.Run(() => { cttox.DoXrayOFF(); });
+                    var dd3 = $"SAR 2 0 0 0 0 0 0{Environment.NewLine}";
+                    seri.DoCommand(dd3);
+                    var dd4 = $"SVI 0 0{Environment.NewLine}";//管電圧0 管電流0
+                    seri.DoCommand(dd4);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(2)));
+                }
+                else
+                {
+                    cttox.DoXrayOn();
+                    Task.WaitAll(Task.Delay(2000));
+                    cttox.DoXrayOFF();
+                }
             };
-            Assert.AreEqual(1, evcnt);
+            Assert.AreEqual("XrayOnReady", cmd.LastOrDefault());
+            Assert.AreEqual(2, evcnt);
         }
         [TestMethod]
         public void ウォーミングアップ()
         {
             List<string> cmd = new List<string>();
             int evcnt = 0;
-            bool DebugMode = false;
+            bool DebugMode = NoComPort;
 
             ServiceCollection servicescollection = new ServiceCollection();
             servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
@@ -187,7 +239,7 @@ namespace UT_Managed.UT_Xray
                                             new XrayCheckerIrregularity(new XrayAddres_L9181_02LT()),
                                             new XrayAddres_L9181_02LT())
                 {
-                    IsDebugMode = DebugMode,
+                    IsDebugMode = NoComPort,
                 };
             });
             servicescollection.AddSingleton<IXrayToPC, XrayToPC>();
@@ -199,21 +251,37 @@ namespace UT_Managed.UT_Xray
                 cttox.EndWUP += (s, e) =>
                 {
                     PCToXray xss = s as PCToXray;
+                    cmd.Add(xss.STSProperty.Status);
                     evcnt++;
                 };
 
-                cttox.DoWUP();
+                if (NoComPort)
+                {
+                    var seri = service.GetService<IXraySerialService>();
+                    var dd0 = $"SAR 0 130 30 0 0 0 0{Environment.NewLine}";
+                    seri.DoCommand(dd0);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
+                    Task.Run(() => { cttox.DoWUP(); });
+                    var dd1 = $"SAR 3 130 30 0 0 0 0{Environment.NewLine}";
+                    seri.DoCommand(dd1);
+                    Task.WaitAll(Task.Delay(TimeSpan.FromSeconds(1)));
+
+                }
+                else
+                {
+                    cttox.DoWUP();
+                }
             };
-            Assert.AreEqual(1 , evcnt);
+
+            Assert.AreNotEqual("NeedWup", cmd.LastOrDefault());
+            Assert.AreEqual(1, evcnt);
         }
 
         [TestMethod]
-        public void X線源から状態及び設定値確認_デバック()
+        public void X線源から状態及び設定値確認_デバック用()
         {
             List<string> cmd = new List<string>();
             int evcnt = 0;
-            bool DebugMode = true;
-
             ServiceCollection servicescollection = new ServiceCollection();
             servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
             servicescollection.AddSingleton<IXrayCheckerFrequency, XrayCheckerFrequency>();
@@ -224,11 +292,11 @@ namespace UT_Managed.UT_Xray
                                             new XrayCheckerIrregularity(new XrayAddres_L9181_02LT()),
                                             new XrayAddres_L9181_02LT())
                 {
-                    IsDebugMode = DebugMode,
+                    IsDebugMode = true,
                 };
             });
             servicescollection.AddSingleton<IXrayToPC, XrayToPC>();
-        
+
 
             using (var service = servicescollection.BuildServiceProvider())
             {
@@ -252,63 +320,6 @@ namespace UT_Managed.UT_Xray
             Assert.AreEqual(8, cmd.Count);
             Assert.IsTrue(3 < evcnt);
         }
-        [TestMethod]
-        public void X線源からPCへの状態及び設定値確認()
-        {
-            List<string> cmd = new List<string>();
-            int evcnt = 0;
-
-            bool DebugMode = true;
-
-            ServiceCollection servicescollection = new ServiceCollection();
-            servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
-            servicescollection.AddSingleton<IXrayCheckerFrequency, XrayCheckerFrequency>();
-            servicescollection.AddSingleton<IXrayCheckerIrregularity, XrayCheckerIrregularity>();
-            servicescollection.AddSingleton<IXraySerialService, XraySerialService>(p =>
-            {
-                return new XraySerialService(new XrayCheckerFrequency(new XrayAddres_L9181_02LT()),
-                                            new XrayCheckerIrregularity(new XrayAddres_L9181_02LT()),
-                                            new XrayAddres_L9181_02LT())
-                {
-                    IsDebugMode = DebugMode,
-                };
-            });
-
-            using (var service = servicescollection.BuildServiceProvider())
-            {
-                var serial = service.GetService<IXraySerialService>();
-                serial.GetSerialParam += (s, e) =>
-                {
-                    XraySerialService xss = s as XraySerialService;
-
-                    string tmpmes = Encoding.GetEncoding("Shift_JIS").GetString(xss.Respons).ToString();
-
-                    tmpmes = tmpmes.Substring(0, tmpmes.Length - 2);
-
-                    if(!cmd.Contains(tmpmes))
-                    {
-                        cmd.Add(tmpmes);
-                    }
-
-                    Debug.WriteLine($"テストモードメッセージ{tmpmes}");
-
-                    evcnt++;
-
-                };
-
-                serial.Start();
-
-                Task.WaitAll(Task.Delay(2000));
-
-                serial.DoCommand($"WUP{Environment.NewLine}");
-
-                Task.WaitAll(Task.Delay(2000));
-            };
-
-            Assert.AreEqual(8 , cmd.Count);
-            Assert.IsTrue(9 < evcnt);
-        }
-
         [TestMethod]
         public void L918102LTパラメータ読込()
         {
@@ -341,7 +352,7 @@ namespace UT_Managed.UT_Xray
                 chk.DoCheck += (s, e) =>
                 {
                     XrayCheckerFrequency xc = s as XrayCheckerFrequency;
-                    if(!cmd.Contains(xc.Cmd_XrayToPC))
+                    if (!cmd.Contains(xc.Cmd_XrayToPC))
                     {
                         cmd.Add(xc.Cmd_XrayToPC);
                     }
@@ -355,107 +366,7 @@ namespace UT_Managed.UT_Xray
 
                 Task.WaitAll(Task.Delay(1100));
             }
-
-            //Assert.AreEqual(6, cmd.Count);
             Assert.IsTrue(0 < evcnt);
-        }
-        [TestMethod]
-        public void L918102LTシリアル通信確認_NOデバック()
-        {
-            List<string> cmd = new List<string>();
-            int evcnt = 0;
-
-            bool DebugMode = false;
-
-            ServiceCollection servicescollection = new ServiceCollection();
-            servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
-            servicescollection.AddSingleton<IXrayCheckerFrequency, XrayCheckerFrequency>();
-            servicescollection.AddSingleton<IXrayCheckerIrregularity, XrayCheckerIrregularity>();
-            servicescollection.AddSingleton<IXraySerialService, XraySerialService>(p =>
-            {
-                return new XraySerialService(new XrayCheckerFrequency(new XrayAddres_L9181_02LT()),
-                                            new XrayCheckerIrregularity(new XrayAddres_L9181_02LT()),
-                                            new XrayAddres_L9181_02LT())
-                {
-                    IsDebugMode = DebugMode,
-                };
-            });
-
-            using (var service = servicescollection.BuildServiceProvider())
-            {
-                var serial = service.GetService<IXraySerialService>();
-                serial.GetSerialParam += (s, e) =>
-                {
-                    XraySerialService xss = s as XraySerialService;
-
-                    string tmpmes = Encoding.GetEncoding("Shift_JIS").GetString(xss.Respons).ToString();
-
-                    tmpmes = tmpmes.Substring(0, tmpmes.Length - 2);
-
-                    Debug.WriteLine($"テストモードメッセージ{tmpmes}");
-
-                    evcnt++;
-
-                };
-
-                serial.Start();
-
-                Task.WaitAll(Task.Delay(1000));
-
-                serial.DoCommand($"WUP{Environment.NewLine}");
-
-                Task.WaitAll(Task.Delay(1000));
-            };
-            Assert.IsTrue(9 < evcnt);
-        }
-        [TestMethod]
-        public void L918102LTシリアル通信確認_デバック()
-        {
-            List<string> cmd = new List<string>();
-            int evcnt = 0;
-
-            bool DebugMode = true;
-
-            ServiceCollection servicescollection = new ServiceCollection();
-            servicescollection.AddSingleton<IXrayAddres_L9181_02LT, XrayAddres_L9181_02LT>();
-            servicescollection.AddSingleton<IXrayCheckerFrequency, XrayCheckerFrequency>();
-            servicescollection.AddSingleton<IXrayCheckerIrregularity, XrayCheckerIrregularity>();
-            servicescollection.AddSingleton<IXraySerialService, XraySerialService>(p =>
-            {
-                return new XraySerialService(new XrayCheckerFrequency(new XrayAddres_L9181_02LT()),
-                                            new XrayCheckerIrregularity(new XrayAddres_L9181_02LT()),
-                                            new XrayAddres_L9181_02LT())
-                {
-                    IsDebugMode = DebugMode,
-                };
-            });
-
-            using (var service = servicescollection.BuildServiceProvider())
-            {
-                var serial = service.GetService<IXraySerialService>();
-                serial.GetSerialParam += (s, e) =>
-                {
-                    XraySerialService xss = s as XraySerialService;
-
-                    string tmpmes = Encoding.GetEncoding("Shift_JIS").GetString(xss.Respons).ToString();
-
-                    tmpmes = tmpmes.Substring(0, tmpmes.Length - 2);
-
-                    Debug.WriteLine($"テストモードメッセージ{tmpmes}");
-
-                    evcnt++;
-
-                };
-
-                serial.Start();
-
-                Task.WaitAll(Task.Delay(1000));
-
-                serial.DoCommand($"WUP{Environment.NewLine}");
-
-                Task.WaitAll(Task.Delay(1000));
-            };
-            Assert.IsTrue(9 < evcnt);
         }
     }
 }
