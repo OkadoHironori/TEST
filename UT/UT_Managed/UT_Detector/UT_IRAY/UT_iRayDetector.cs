@@ -62,6 +62,98 @@ namespace UT_Managed.UT_Detector.UT_IRAY
             Environment.SetEnvironmentVariable("Path", path + Path.PathSeparator + fullpath);
         }
         [TestMethod]
+        public void 画像回転CCW90_ポインタ編()
+        {
+            string testpath = Path.Combine(Directory.GetCurrentDirectory(), "UT_CCW90");
+            string savepath_bef = Path.Combine(testpath, "前CCW90.tif");
+            string savepath_aft = Path.Combine(testpath, "後CCW90.tif");
+            DirectoryProcessor.Delete(Path.Combine(testpath));
+            Directory.CreateDirectory(Path.Combine(testpath));
+            //データ作成
+            int width = 1536;
+            int height = 1536;
+            ushort[] data = MakeGray16Data(width, height);
+            byte[] bytedata = BinaryConverter.ConvertUStoB(data);
+            IntPtr parray = Marshal.AllocCoTaskMem(Marshal.SizeOf(typeof(ushort)) * data.Length);
+            Marshal.Copy(bytedata, 0, parray, bytedata.Length);
+
+            Stopwatch sw = Stopwatch.StartNew();
+            ushort[] ArrayptData = new ushort[data.Length];
+            unsafe
+            {
+                //ＣＴ画像データをビットマップデータに変換
+                byte* p = (byte*)parray;
+                int idxs = 0;
+                foreach (var idxp in Enumerable.Range(0, bytedata.Length).Where(i => i % 2 == 0))
+                {
+                    byte[] tmpd = new byte[2];
+                    tmpd[0] = p[idxp]; 
+                    tmpd[1] = p[idxp + 1];
+                    ArrayptData[idxs] = BitConverter.ToUInt16(tmpd, 0);
+                    idxs++;
+                }
+            }
+            sw.Stop();
+            Debug.WriteLine($"Use Unsafe {sw.Elapsed}");
+            Trace.WriteLine($"Use Unsafe {sw.Elapsed}");
+            int idx = 0;
+            foreach (var tdata in ArrayptData)
+            {
+                var xx = idx % (int)width;
+                var yy = idx / (int)width;
+                Assert.AreEqual(data[idx], ArrayptData[idx]);
+                idx++;
+            }
+
+            sw.Reset();
+            sw.Start();
+            ushort[] ArrayData = BinaryConverter.ConvertUSPtrtoUS(parray, width * height, data);
+            sw.Stop();
+            Debug.WriteLine($"Use Array {sw.Elapsed}");
+            Trace.WriteLine($"Use Array {sw.Elapsed}");
+            idx = 0;
+            foreach (var tdata in ArrayData)
+            {
+                var xx = idx % (int)width;
+                var yy = idx / (int)width;
+                Assert.AreEqual(data[idx], ArrayData[idx]);
+                idx++;
+            }
+            Marshal.FreeHGlobal(parray);
+
+
+
+
+
+
+            SaveImage(savepath_bef, data, width, height, PixelFormats.Gray16);
+
+            ushort exres = data.LastOrDefault();
+            ServiceCollection servicescollection = new ServiceCollection();
+            servicescollection.AddSingleton<IRotCCW90, RotCCW90>();
+            servicescollection.AddSingleton<IDetConf, DetConf>();
+
+            using (var service = servicescollection.BuildServiceProvider())
+            {
+                IRotCCW90 ccw90 = service.GetService<IRotCCW90>();
+                ccw90.EndRotCCW90 += (s, e) =>
+                {
+                    RotCCW90 rccw90 = s as RotCCW90;
+
+                    Assert.AreEqual(width, rccw90.Height);
+
+                    Assert.AreEqual(height, rccw90.Width);
+
+                    ushort[] tmpdata = rccw90.Targets;
+
+                    Assert.AreEqual(exres, tmpdata[height - 1]);
+
+                    SaveImage(savepath_aft, tmpdata, rccw90.Width, rccw90.Height, PixelFormats.Gray16);
+                };
+                ccw90.DoRotCCW90(data, width, height);
+            }
+        }
+        [TestMethod]
         public void 画像回転CCW90()
         {
             string testpath = Path.Combine(Directory.GetCurrentDirectory(), "UT_CCW90");

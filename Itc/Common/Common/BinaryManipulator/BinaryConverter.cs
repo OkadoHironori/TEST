@@ -1,6 +1,7 @@
 ﻿using Itc.Common.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Itc.Common
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public static ushort[] ConvertPtrtoUS(IntPtr source, int length)
+        public static ushort[] ConvertSPtrtoUS(IntPtr source, int length)
         {
             short[] tmpsourceshort = new short[length];
             Marshal.Copy(source, tmpsourceshort, 0, length);
@@ -33,6 +34,44 @@ namespace Itc.Common
                 tmpd[0] = b;
                 tmpd[1] = a;
                 outtarget[idx] = BitConverter.ToUInt16(tmpd, 0);
+            }
+            return outtarget;
+        }
+        /// <summary>
+        /// Ptrからushort[]への変換
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static ushort[] ConvertUSPtrtoUS(IntPtr source, int length, ushort[] data)
+        {
+            byte[] tmpsourceshort = new byte[length*2];
+            Marshal.Copy(source, tmpsourceshort, 0, length * 2);
+
+            ushort[] outtarget = new ushort[length];
+            int idxs = 0;
+            IEnumerable<int> cntlist = Enumerable.Range(0, length * 2).Where(p => p % 2 == 0);
+            //var paraoption = new ParallelOptions
+            //{
+            //    MaxDegreeOfParallelism = Environment.ProcessorCount
+            //};
+
+            //Parallel.ForEach(cntlist, paraoption, (idx) => 
+            //{
+            //    byte[] tmpd = new byte[2];
+            //    tmpd[0] = tmpsourceshort[idx];
+            //    tmpd[1] = tmpsourceshort[idx + 1];
+            //    outtarget[idx/2] = BitConverter.ToUInt16(tmpd, 0);  
+            //});
+
+            foreach (var idx in cntlist)
+            {
+                byte[] tmpd = new byte[2];
+                tmpd[0] = tmpsourceshort[idx];
+                tmpd[1] = tmpsourceshort[idx + 1];
+                outtarget[idxs] = BitConverter.ToUInt16(tmpd, 0);
+                idxs++;
             }
             return outtarget;
         }
@@ -63,11 +102,26 @@ namespace Itc.Common
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public static byte[] ConvertStoB(short[] source, int width, int height)
+        public static byte[] ConvertStoB(short[] source)
         {
             byte[] target = new byte[source.Length * 2];
 
             Buffer.BlockCopy(source, 0, target, 0, source.Length*2);
+
+            return target;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static byte[] ConvertUStoB(ushort[] source)
+        {
+            byte[] target = new byte[source.Length * 2];
+
+            Buffer.BlockCopy(source, 0, target, 0, source.Length * 2);
 
             return target;
         }

@@ -58,6 +58,7 @@ namespace DetectorControl
         /// <param name="height"></param>
         public void DoRotCCW90(ushort[] data, int width, int height)
         {
+            Stopwatch sw = Stopwatch.StartNew();
 
             Width = height;
             Height = width;
@@ -73,6 +74,10 @@ namespace DetectorControl
                 //Debug.WriteLine($"後x={xx} y={yy}");
                 Targets[xx + (yy * height)] = data[idx];
             }
+            sw.Stop();
+            Trace.WriteLine($"DoRotCCW90Time {sw.Elapsed}");
+
+
             EndRotCCW90?.Invoke(this, new EventArgs());
         }
         /// <summary>

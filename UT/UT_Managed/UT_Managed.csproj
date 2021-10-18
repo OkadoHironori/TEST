@@ -38,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -121,10 +122,6 @@
     <ProjectReference Include="..\..\Itc\Common\Xray\XrayControl\XrayControl.csproj">
       <Project>{D505E91D-9D4D-4574-A84E-8028C13809C3}</Project>
       <Name>XrayControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Model\ManagedModelClass\ManagedModelClass.csproj">
-      <Project>{FE7424E7-4323-4780-9960-0DC41874B96C}</Project>
-      <Name>ManagedModelClass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

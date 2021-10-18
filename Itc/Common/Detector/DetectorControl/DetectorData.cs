@@ -139,7 +139,7 @@ namespace DetectorControl
         {
             DispWidth = detwidht;
             DispHeight = detheight;
-            ArrayData = BinaryConverter.ConvertPtrtoUS(ptr, detwidht * detheight);
+            ArrayData = BinaryConverter.ConvertSPtrtoUS(ptr, detwidht * detheight);
             SendArrayData?.Invoke(this, new EventArgs());//LUT用最大値、最小値
 
             if (FlipVertical)

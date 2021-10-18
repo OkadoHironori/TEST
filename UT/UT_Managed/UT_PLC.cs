@@ -36,7 +36,7 @@ namespace UT_Managed
         [TestMethod]
         public void PLCパラメータ読()
         {
-            int testcnt = 0;
+            //int testcnt = 0;
 
             //ServiceCollection serviceCollection = GetService();
             //using (var service = serviceCollection.BuildServiceProvider())
